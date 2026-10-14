@@ -1,0 +1,7 @@
+{
+  "name": "@regresslab/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": { "test": "node --test *.test.mjs" },
+  "devDependencies": { "ajv": "8.20.0", "ajv-formats": "3.0.1" }
+}

@@ -1,0 +1,381 @@
+{
+  "id": "fc4832af-7b28-4aee-8184-21181edd25f2",
+  "comparisonId": "ded4aee1-5cc2-4df4-926a-46c65e0a3416",
+  "reportVersion": "ollama-hypotheses-v3",
+  "inputSha256": "5165b140650d6514c97dbea660c0cd17df55ea0c4f85eaf3560ed8963dac0e27",
+  "model": "qwen3:4b",
+  "modelDigest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "status": "UNVERIFIED_HYPOTHESES",
+  "input": {
+    "diff": {
+      "repository": "300-iq/regresslab-java-demo",
+      "githubRepositoryId": 1417739588,
+      "pullRequestNumber": 3,
+      "baselineSha": "55a1c4030211cff11169f26cf75e0771e58efaf1",
+      "candidateSha": "a98e5d9d96298137504be7fa4ba01f9e17033482",
+      "files": [
+        {
+          "filePath": "src/main/java/dev/regresslab/demo/EventStatistics.java",
+          "previousFilePath": "src/main/java/dev/regresslab/demo/EventStatistics.java",
+          "patch": "@@ -13,6 +13,6 @@ public EventStatistics(List<String> categories) {\n         for (String category : categories) counts.merge(category, 1, Integer::sum);\n     }\n \n-    public int countByCategory(String category) { return counts.getOrDefault(category, 0); }\n+    public int countByCategory(String category) { return new HashMap<>(counts).getOrDefault(category, 0); }\n     public int distinctCategories() { return counts.size(); }\n }",
+          "changedLines": [
+            {
+              "side": "BASELINE",
+              "line": 16,
+              "code": "    public int countByCategory(String category) { return counts.getOrDefault(category, 0); }"
+            },
+            {
+              "side": "CANDIDATE",
+              "line": 16,
+              "code": "    public int countByCategory(String category) { return new HashMap<>(counts).getOrDefault(category, 0); }"
+            }
+          ]
+        }
+      ]
+    },
+    "evidence": {
+      "analysis": {
+        "id": "ec2f0284-e7dc-4bb3-95c9-ae34910ecbd5",
+        "comparisonId": "ded4aee1-5cc2-4df4-926a-46c65e0a3416",
+        "analysisVersion": "fork-bootstrap-v2",
+        "policySha256": "7fcf65eeedf1e73e7c674f072383cc16024c0cc06fe25f06ec2fc620750e8f79",
+        "inputSha256": "2797b07f3f4c44740e86e0c9cb4e2b3251b77ad28d03558200b4ef31f708672d",
+        "policy": {
+          "practicalThresholdPercent": 5,
+          "minimumForksPerArm": 10,
+          "minimumIterationsPerFork": 5,
+          "minimumDistinctForkMeans": 5,
+          "maximumForkCv": 0.2,
+          "resamples": 10000,
+          "seed": 20261013,
+          "familyConfidenceLevel": 0.95,
+          "familySize": 2
+        },
+        "result": {
+          "benchmarkIdentifier": "dev.regresslab.demo.EventBenchmarks.countByCategory",
+          "unit": "ns/op",
+          "direction": "LOWER",
+          "baseline": {
+            "unit": "ns/op",
+            "direction": "LOWER",
+            "rawMeasurements": {
+              "count": 15,
+              "mean": 3.543162462754322,
+              "median": 3.536558753330717,
+              "standardDeviation": 0.04600957488832753,
+              "coefficientOfVariation": 0.012985454483665252
+            },
+            "forkMeans": {
+              "count": 3,
+              "mean": 3.543162462754322,
+              "median": 3.535242588864148,
+              "standardDeviation": 0.027845377516608084,
+              "coefficientOfVariation": 0.007858905090951468
+            },
+            "orderedForkMeans": [
+              3.5741098365398214,
+              3.535242588864148,
+              3.5201349628589975
+            ]
+          },
+          "candidate": {
+            "unit": "ns/op",
+            "direction": "LOWER",
+            "rawMeasurements": {
+              "count": 15,
+              "mean": 1692.2489625149344,
+              "median": 1690.5672469276574,
+              "standardDeviation": 7.0241109499643395,
+              "coefficientOfVariation": 0.004150755063560779
+            },
+            "forkMeans": {
+              "count": 3,
+              "mean": 1692.2489625149344,
+              "median": 1692.4947618793885,
+              "standardDeviation": 1.8408011186988882,
+              "coefficientOfVariation": 0.0010877838660117618
+            },
+            "orderedForkMeans": [
+              1690.2976110934128,
+              1693.9545145720015,
+              1692.4947618793885
+            ]
+          },
+          "relativeChangePercent": 47774.92567584101,
+          "interval": {
+            "lowerPercent": 47192.82782002663,
+            "upperPercent": 48021.862725291605,
+            "nominalConfidenceLevel": 0.975,
+            "method": "independent-arm-fork-percentile-bootstrap",
+            "statistic": "direction-adjusted-relative-median-of-fork-means-percent",
+            "resamplingUnit": "JVM_FORK_MEAN",
+            "quantileMethod": "linear-interpolation-type-7",
+            "resamples": 10000,
+            "seed": 20261013,
+            "exploratory": true
+          },
+          "classification": "INCONCLUSIVE",
+          "explanation": "The evidence cannot resolve a practical change. At least 10 JVM forks per arm are required for an indication. Too few distinct fork means are observed to support a stable interval. Any interval is conditional and must not override adequacy or noise warnings.",
+          "reasons": [
+            "TOO_FEW_FORKS",
+            "LOW_FORK_DIVERSITY"
+          ],
+          "environmentWarnings": [
+            "Recorded environments match; unrecorded runner contention and drift remain possible.",
+            "GitHub artifact origin is checked; measurements remain untrusted and independence is not attested."
+          ],
+          "limitations": [
+            "Iterations within a JVM fork are dependent. The bootstrap resamples whole fork means, not individual iterations.",
+            "The interval assumes exchangeable, independent forks within each arm and independent arms. Shared runner noise, drift and cross-fork dependence can violate these assumptions.",
+            "Matching environment metadata does not establish equivalent CPU contention, scheduling, thermal state or completed warmup convergence.",
+            "This is a percentile bootstrap with a nominal, not guaranteed, coverage level; small samples, quantization and unobserved noise can make it misleading.",
+            "Bonferroni adjustment covers the recorded run-pair case family only, subject to interval validity. Repeated PRs, reruns and post-hoc threshold selection are not controlled.",
+            "An indication is conditional evidence for this workload and runner, not proof of causation, measurement honesty or a universal performance change."
+          ]
+        },
+        "dataOrigin": "REAL",
+        "provenance": "GITHUB_METADATA",
+        "createdAt": "2026-10-14T16:56:08.557970Z"
+      },
+      "baselineWorkflowUrl": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38600700268",
+      "candidateWorkflowUrl": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38600700268",
+      "baselineSamples": [
+        {
+          "forkIndex": 0,
+          "iterationIndex": 0,
+          "value": 3.6775425059892677
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 1,
+          "value": 3.54174298873356
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 2,
+          "value": 3.6027332484958716
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 3,
+          "value": 3.520464885634554
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 4,
+          "value": 3.528065553845853
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 0,
+          "value": 3.554476402767876
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 1,
+          "value": 3.5404724244864467
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 2,
+          "value": 3.5208409774923806
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 3,
+          "value": 3.5642697110496253
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 4,
+          "value": 3.496153428524409
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 0,
+          "value": 3.5071746911249058
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 1,
+          "value": 3.5216256222030524
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 2,
+          "value": 3.5387784781608294
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 3,
+          "value": 3.496537269475482
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 4,
+          "value": 3.536558753330717
+        }
+      ],
+      "candidateSamples": [
+        {
+          "forkIndex": 0,
+          "iterationIndex": 0,
+          "value": 1689.3193392515254
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 1,
+          "value": 1684.3532478818163
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 2,
+          "value": 1690.1666542742134
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 3,
+          "value": 1693.9531726352586
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 4,
+          "value": 1693.6956414242507
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 0,
+          "value": 1693.2396025557246
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 1,
+          "value": 1684.2569353931544
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 2,
+          "value": 1690.5672469276574
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 3,
+          "value": 1688.211045225062
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 4,
+          "value": 1713.4977427584092
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 0,
+          "value": 1687.1974406251002
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 1,
+          "value": 1694.3294262340905
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 2,
+          "value": 1688.5335612391323
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 3,
+          "value": 1696.22341759072
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 4,
+          "value": 1696.1899637078996
+        }
+      ],
+      "baselineEnvironmentSha256": "3e6eaee0449aff43fc4459c62770735998dc5b4d0722c5f6913f440bedef4331",
+      "candidateEnvironmentSha256": "3e6eaee0449aff43fc4459c62770735998dc5b4d0722c5f6913f440bedef4331",
+      "conditions": {
+        "baselineParameters": {
+          "events": "10000"
+        },
+        "baselineEnvironment": {
+          "os": "Linux 6.17.0-1022-azure",
+          "cpu": "AMD EPYC 7763 64-Core Processor",
+          "runner": "github-hosted:GitHub Actions 1000000010",
+          "jmhVersion": "1.37",
+          "javaVersion": "21.0.12.1",
+          "architecture": "x86_64"
+        },
+        "candidateParameters": {
+          "events": "10000"
+        },
+        "candidateEnvironment": {
+          "os": "Linux 6.17.0-1022-azure",
+          "cpu": "AMD EPYC 7763 64-Core Processor",
+          "runner": "github-hosted:GitHub Actions 1000000010",
+          "jmhVersion": "1.37",
+          "javaVersion": "21.0.12.1",
+          "architecture": "x86_64"
+        },
+        "baselineConfiguration": {
+          "jvmArgs": [
+            "-Xms256m",
+            "-Xmx256m",
+            "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+          ],
+          "forkCount": 3,
+          "warmupTimeMs": 1000,
+          "warmupIterations": 3,
+          "measurementTimeMs": 1000,
+          "measurementIterations": 5
+        },
+        "candidateConfiguration": {
+          "jvmArgs": [
+            "-Xms256m",
+            "-Xmx256m",
+            "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+          ],
+          "forkCount": 3,
+          "warmupTimeMs": 1000,
+          "warmupIterations": 3,
+          "measurementTimeMs": 1000,
+          "measurementIterations": 5
+        }
+      }
+    }
+  },
+  "report": {
+    "hypotheses": [
+      {
+        "potentialCause": "New HashMap copy in countByCategory method",
+        "references": [
+          {
+            "filePath": "src/main/java/dev/regresslab/demo/EventStatistics.java",
+            "side": "CANDIDATE",
+            "line": 16
+          }
+        ],
+        "comparisonId": "ded4aee1-5cc2-4df4-926a-46c65e0a3416",
+        "technicalExplanation": "The candidate code creates a new HashMap copy from the existing counts map before returning the count for a category. This copy operation is O(n) in the size of the map, which can be significant for large category counts. The baseline method directly uses the existing map without copying, so it's faster.",
+        "verificationExperiment": "Run the benchmark with a large number of categories (e.g., 10000) to observe if the copy operation becomes the dominant cost. Measure the time for a single call to countByCategory with a large category set.",
+        "uncertainty": "The effect size is large (47774% increase), but the evidence is inconclusive due to insufficient fork diversity. The change might be due to other factors like JVM warmup or runner contention."
+      }
+    ],
+    "missingEvidence": [
+      "Insufficient fork diversity to confirm the change (only 3 distinct fork means observed)",
+      "Potential runner contention or drift affecting the measurements",
+      "Lack of control for the size of the category map in the benchmark"
+    ]
+  },
+  "limitations": [
+    "UNVERIFIED_HYPOTHESES: Model-generated prose is not a verified root cause or statistical conclusion.",
+    "Only supplied changed lines and comparison identifiers are mechanically checked. Prose may still be wrong or misleading.",
+    "Prompt injection defenses do not guarantee faithful interpretation. Repository content is untrusted; no model tools exist.",
+    "GitHub artifact origin does not attest honest measurements. Runner noise, dependent iterations and limited forks remain confounders.",
+    "Experiments are suggestions and have not been executed. Report applies only to its stored commit/diff/analysis snapshot.",
+    "Hypothesis 1 mentions a single measurement or bypassing warmup. Such an experiment is inadequate regression evidence; retain warmup and repeated independent forks.",
+    "Hypothesis 1 includes model-written statistical commentary. Use the supplied backend analysis for measurement claims; this prose has not been statistically verified."
+  ],
+  "createdAt": "2026-10-14T17:15:34.615524Z"
+}

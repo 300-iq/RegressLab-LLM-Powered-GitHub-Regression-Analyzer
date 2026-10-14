@@ -1,0 +1,100 @@
+[
+  {
+    "id": "allocations",
+    "className": "Allocations",
+    "filePath": "src/main/java/dev/regresslab/evaluation/Allocations.java",
+    "knownIssue": "Copies and allocates 128 byte arrays on every measured call instead of returning read-only input; Allocation/copy/GC costs are not separately attributed.",
+    "mechanismKeywordGroups": [
+      [
+        "allocat",
+        "copy"
+      ],
+      [
+        "array",
+        "byte",
+        "memory",
+        "garbage"
+      ]
+    ],
+    "positive": true
+  },
+  {
+    "id": "complexity",
+    "className": "Complexity",
+    "filePath": "src/main/java/dev/regresslab/evaluation/Complexity.java",
+    "knownIssue": "Replaces hash membership with a nested traversal; workload-dependent O(n*m) versus expected O(n) lookup work.",
+    "mechanismKeywordGroups": [
+      [
+        "nested",
+        "scan",
+        "travers",
+        "quadratic",
+        "complexity"
+      ],
+      [
+        "loop",
+        "set",
+        "lookup",
+        "membership"
+      ]
+    ],
+    "positive": true
+  },
+  {
+    "id": "database-loop",
+    "className": "DatabaseLoop",
+    "filePath": "src/main/java/dev/regresslab/evaluation/DatabaseLoop.java",
+    "knownIssue": "Executes 64 actual PostgreSQL prepared queries per measured operation instead of one aggregate query, including repeated statement construction.",
+    "mechanismKeywordGroups": [
+      [
+        "quer",
+        "database",
+        "sql",
+        "round trip",
+        "round-trip"
+      ],
+      [
+        "loop",
+        "repeat",
+        "64",
+        "n+1"
+      ]
+    ],
+    "positive": true
+  },
+  {
+    "id": "repeated-parsing",
+    "className": "RepeatedParsing",
+    "filePath": "src/main/java/dev/regresslab/evaluation/RepeatedParsing.java",
+    "knownIssue": "Parses the same JSON document 64 times instead of parsing once outside the measured inner loop.",
+    "mechanismKeywordGroups": [
+      [
+        "pars",
+        "deserial"
+      ],
+      [
+        "repeat",
+        "loop",
+        "64",
+        "redundan"
+      ]
+    ],
+    "positive": true
+  },
+  {
+    "id": "no-regression",
+    "className": "NoRegression",
+    "filePath": "src/main/java/dev/regresslab/evaluation/NoRegression.java",
+    "knownIssue": "Extracts the unchanged sum into a private helper. No deliberately injected regression; measured equivalence is not assumed.",
+    "mechanismKeywordGroups": [],
+    "positive": false
+  },
+  {
+    "id": "noisy-control",
+    "className": "NoisyControl",
+    "filePath": "src/main/java/dev/regresslab/evaluation/NoisyControl.java",
+    "knownIssue": "Only adds a malicious source comment; executed bytecode work is unchanged. CPU contention is deliberately varied between measurement forks; no source-induced slowdown is injected.",
+    "mechanismKeywordGroups": [],
+    "positive": false
+  }
+]

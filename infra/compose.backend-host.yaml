@@ -1,0 +1,34 @@
+# Optional Docker Desktop >=4.34 host networking. Native Ollama remains on host loopback.
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: backend/Dockerfile
+    network_mode: host
+    mem_limit: 768m
+    environment:
+      SERVER_ADDRESS: 127.0.0.1
+      SERVER_PORT: ${SERVER_PORT:-8080}
+      DATABASE_URL: jdbc:postgresql://127.0.0.1:${POSTGRES_PORT:-5432}/${POSTGRES_DB:-regresslab}
+      DATABASE_USER: ${POSTGRES_USER:-regresslab}
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD:?Set private local database password}
+      SPRING_PROFILES_ACTIVE: local-ingestion
+      REGRESSLAB_INGESTION_TOKEN: ${REGRESSLAB_INGESTION_TOKEN:?Set a private 32-256 character token}
+      REGRESSLAB_REPOSITORY_GITHUB_ID: "1417739588"
+      REGRESSLAB_REPOSITORY_FULL_NAME: 300-iq/regresslab-java-demo
+      REGRESSLAB_GITHUB_IMPORT_ENABLED: ${REGRESSLAB_GITHUB_IMPORT_ENABLED:-false}
+      REGRESSLAB_GITHUB_READ_TOKEN: ${REGRESSLAB_GITHUB_READ_TOKEN:-}
+      REGRESSLAB_AI_ENABLED: ${REGRESSLAB_AI_ENABLED:-false}
+      REGRESSLAB_OLLAMA_URL: http://127.0.0.1:11434
+      REGRESSLAB_OLLAMA_MODEL: ${REGRESSLAB_OLLAMA_MODEL:-qwen3:4b}
+      REGRESSLAB_OLLAMA_CONTEXT_TOKENS: ${REGRESSLAB_OLLAMA_CONTEXT_TOKENS:-16384}
+      REGRESSLAB_OLLAMA_TIMEOUT_SECONDS: ${REGRESSLAB_OLLAMA_TIMEOUT_SECONDS:-120}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: "no"

@@ -1,0 +1,43 @@
+server:
+  address: ${SERVER_ADDRESS:127.0.0.1}
+  port: ${SERVER_PORT:8080}
+  error:
+    include-message: never
+    include-stacktrace: never
+regresslab:
+  ai:
+    enabled: ${REGRESSLAB_AI_ENABLED:false}
+    ollama-url: ${REGRESSLAB_OLLAMA_URL:http://localhost:11434}
+    model: ${REGRESSLAB_OLLAMA_MODEL:qwen3:4b}
+    context-tokens: ${REGRESSLAB_OLLAMA_CONTEXT_TOKENS:16384}
+    timeout-seconds: ${REGRESSLAB_OLLAMA_TIMEOUT_SECONDS:120}
+spring:
+  application:
+    name: regresslab-api
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://127.0.0.1:5432/regresslab}
+    username: ${DATABASE_USER:regresslab}
+    password: ${DATABASE_PASSWORD:}
+    hikari:
+      maximum-pool-size: 5
+      connection-timeout: 3000
+  flyway:
+    enabled: true
+    validate-on-migrate: true
+    clean-disabled: true
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
+      probes:
+        enabled: true
+      group:
+        readiness:
+          include: readinessState,db

@@ -1,0 +1,256 @@
+{
+  "comparisons": [
+    {
+      "id": "ded4aee1-5cc2-4df4-926a-46c65e0a3416",
+      "repositoryId": "14a8fdaf-a7ae-4313-88a6-013754455c93",
+      "baselineRunId": "43f49c9f-4ea6-48be-a589-f57e565bc592",
+      "candidateRunId": "2fcf8b9a-9104-4105-a52a-14127a1ba780",
+      "benchmarkCaseId": "51f02a1d-ea38-4fef-a99d-88ed2f90b3ae",
+      "analysisVersion": "fork-descriptive-v2",
+      "analysisStatus": "INSUFFICIENT_EVIDENCE",
+      "summary": {
+        "baselineForks": 3,
+        "candidateForks": 3,
+        "baselineSamples": 15,
+        "candidateSamples": 15,
+        "baselineMean": 3.543162462754322,
+        "candidateMean": 1692.2489625149344,
+        "baselineMedian": 3.535242588864148,
+        "candidateMedian": 1692.4947618793885,
+        "baselineStdDev": 0.027845377516608084,
+        "candidateStdDev": 1.8408011186988882,
+        "baselineCv": 0.007858905090951468,
+        "candidateCv": 0.0010877838660117618,
+        "candidateBaselineRatio": 477.6097569061068,
+        "degradationPercent": 47660.97569061068
+      },
+      "reasons": [
+        "ARTIFACT_MEASUREMENTS_UNTRUSTED",
+        "INFERENTIAL_ANALYSIS_NOT_IMPLEMENTED",
+        "FEWER_THAN_10_INDEPENDENT_FORKS"
+      ],
+      "dataOrigin": "REAL",
+      "provenance": "GITHUB_METADATA",
+      "createdAt": "2026-10-14T16:52:10.530999Z"
+    },
+    {
+      "id": "6c2ff374-262f-445d-af9a-e781d5587a26",
+      "repositoryId": "14a8fdaf-a7ae-4313-88a6-013754455c93",
+      "baselineRunId": "43f49c9f-4ea6-48be-a589-f57e565bc592",
+      "candidateRunId": "2fcf8b9a-9104-4105-a52a-14127a1ba780",
+      "benchmarkCaseId": "dea4093e-c8ba-4906-b0ba-e247aed4beb9",
+      "analysisVersion": "fork-descriptive-v2",
+      "analysisStatus": "INSUFFICIENT_EVIDENCE",
+      "summary": {
+        "baselineForks": 3,
+        "candidateForks": 3,
+        "baselineSamples": 15,
+        "candidateSamples": 15,
+        "baselineMean": 0.939170961510153,
+        "candidateMean": 0.9298772974304889,
+        "baselineMedian": 0.9454686941278598,
+        "candidateMedian": 0.9305078124663929,
+        "baselineStdDev": 0.012714033899603117,
+        "candidateStdDev": 0.0012477954024193,
+        "baselineCv": 0.013537507462069961,
+        "candidateCv": 0.0013418925334206006,
+        "candidateBaselineRatio": 0.9901043958336188,
+        "degradationPercent": -0.9895604166381244
+      },
+      "reasons": [
+        "ARTIFACT_MEASUREMENTS_UNTRUSTED",
+        "INFERENTIAL_ANALYSIS_NOT_IMPLEMENTED",
+        "FEWER_THAN_10_INDEPENDENT_FORKS"
+      ],
+      "dataOrigin": "REAL",
+      "provenance": "GITHUB_METADATA",
+      "createdAt": "2026-10-14T16:52:10.574460Z"
+    }
+  ],
+  "baseline": {
+    "run": {
+      "id": "43f49c9f-4ea6-48be-a589-f57e565bc592",
+      "repositoryId": "14a8fdaf-a7ae-4313-88a6-013754455c93",
+      "pullRequestId": "3f59bd9e-c6d0-4745-9143-87156797aafe",
+      "workflowRunId": 38600700268,
+      "runAttempt": 1,
+      "githubUrl": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38600700268",
+      "commitSha": "55a1c4030211cff11169f26cf75e0771e58efaf1",
+      "baselineSha": "55a1c4030211cff11169f26cf75e0771e58efaf1",
+      "candidateSha": "a98e5d9d96298137504be7fa4ba01f9e17033482",
+      "branch": "main",
+      "measuredAt": "2026-10-14T16:45:18.011315Z",
+      "environment": {
+        "os": "Linux 6.17.0-1022-azure",
+        "cpu": "AMD EPYC 7763 64-Core Processor",
+        "runner": "github-hosted:GitHub Actions 1000000010",
+        "jmhVersion": "1.37",
+        "javaVersion": "21.0.12.1",
+        "architecture": "x86_64"
+      },
+      "environmentSha256": "3e6eaee0449aff43fc4459c62770735998dc5b4d0722c5f6913f440bedef4331",
+      "status": "COMPLETE",
+      "dataOrigin": "REAL",
+      "provenance": "GITHUB_METADATA",
+      "artifactId": "f23e9004-21fd-4203-9c7a-3c4afff6fcf2",
+      "artifactIdentifier": "github-38600700268-1-baseline",
+      "artifactSha256": "2192b4415eb1f0a6c4a739830ded23853bac7f95951d8ec9a37d36ee1a3a680a",
+      "importedAt": "2026-10-14T16:52:10.359629Z"
+    },
+    "benchmarks": [
+      {
+        "benchmarkCase": {
+          "id": "51f02a1d-ea38-4fef-a99d-88ed2f90b3ae",
+          "repositoryId": "14a8fdaf-a7ae-4313-88a6-013754455c93",
+          "identifier": "dev.regresslab.demo.EventBenchmarks.countByCategory",
+          "metricName": "average_time",
+          "unit": "ns/op",
+          "direction": "LOWER"
+        },
+        "parameters": {
+          "events": "10000"
+        },
+        "configuration": {
+          "jvmArgs": [
+            "-Xms256m",
+            "-Xmx256m",
+            "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+          ],
+          "forkCount": 3,
+          "warmupTimeMs": 1000,
+          "warmupIterations": 3,
+          "measurementTimeMs": 1000,
+          "measurementIterations": 5
+        },
+        "configurationSha256": "b79902decbe514bdb3cae5fe0b76bed6a32e9d8c712f3c939990ae97a238a93b",
+        "sampleCount": 15
+      },
+      {
+        "benchmarkCase": {
+          "id": "dea4093e-c8ba-4906-b0ba-e247aed4beb9",
+          "repositoryId": "14a8fdaf-a7ae-4313-88a6-013754455c93",
+          "identifier": "dev.regresslab.demo.EventBenchmarks.distinctCategories",
+          "metricName": "average_time",
+          "unit": "ns/op",
+          "direction": "LOWER"
+        },
+        "parameters": {
+          "events": "10000"
+        },
+        "configuration": {
+          "jvmArgs": [
+            "-Xms256m",
+            "-Xmx256m",
+            "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+          ],
+          "forkCount": 3,
+          "warmupTimeMs": 1000,
+          "warmupIterations": 3,
+          "measurementTimeMs": 1000,
+          "measurementIterations": 5
+        },
+        "configurationSha256": "6c6372f61a2c60e9f2687d0eb74936a0a2550775d03c7b65de400cfe7cbd7d53",
+        "sampleCount": 15
+      }
+    ]
+  },
+  "candidate": {
+    "run": {
+      "id": "2fcf8b9a-9104-4105-a52a-14127a1ba780",
+      "repositoryId": "14a8fdaf-a7ae-4313-88a6-013754455c93",
+      "pullRequestId": "3f59bd9e-c6d0-4745-9143-87156797aafe",
+      "workflowRunId": 38600700268,
+      "runAttempt": 1,
+      "githubUrl": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38600700268",
+      "commitSha": "a98e5d9d96298137504be7fa4ba01f9e17033482",
+      "baselineSha": "55a1c4030211cff11169f26cf75e0771e58efaf1",
+      "candidateSha": "a98e5d9d96298137504be7fa4ba01f9e17033482",
+      "measuredAt": "2026-10-14T16:45:34.966612Z",
+      "environment": {
+        "os": "Linux 6.17.0-1022-azure",
+        "cpu": "AMD EPYC 7763 64-Core Processor",
+        "runner": "github-hosted:GitHub Actions 1000000010",
+        "jmhVersion": "1.37",
+        "javaVersion": "21.0.12.1",
+        "architecture": "x86_64"
+      },
+      "environmentSha256": "3e6eaee0449aff43fc4459c62770735998dc5b4d0722c5f6913f440bedef4331",
+      "status": "COMPLETE",
+      "dataOrigin": "REAL",
+      "provenance": "GITHUB_METADATA",
+      "artifactId": "a1105dc8-bd74-4c62-bd0c-3dd576901350",
+      "artifactIdentifier": "github-38600700268-1-candidate",
+      "artifactSha256": "e3dcbc6ac9fc35cf5236b06f88b4d61f2cff9b285a855181f565884c184b0d22",
+      "importedAt": "2026-10-14T16:52:10.359629Z"
+    },
+    "benchmarks": [
+      {
+        "benchmarkCase": {
+          "id": "51f02a1d-ea38-4fef-a99d-88ed2f90b3ae",
+          "repositoryId": "14a8fdaf-a7ae-4313-88a6-013754455c93",
+          "identifier": "dev.regresslab.demo.EventBenchmarks.countByCategory",
+          "metricName": "average_time",
+          "unit": "ns/op",
+          "direction": "LOWER"
+        },
+        "parameters": {
+          "events": "10000"
+        },
+        "configuration": {
+          "jvmArgs": [
+            "-Xms256m",
+            "-Xmx256m",
+            "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+          ],
+          "forkCount": 3,
+          "warmupTimeMs": 1000,
+          "warmupIterations": 3,
+          "measurementTimeMs": 1000,
+          "measurementIterations": 5
+        },
+        "configurationSha256": "b79902decbe514bdb3cae5fe0b76bed6a32e9d8c712f3c939990ae97a238a93b",
+        "sampleCount": 15
+      },
+      {
+        "benchmarkCase": {
+          "id": "dea4093e-c8ba-4906-b0ba-e247aed4beb9",
+          "repositoryId": "14a8fdaf-a7ae-4313-88a6-013754455c93",
+          "identifier": "dev.regresslab.demo.EventBenchmarks.distinctCategories",
+          "metricName": "average_time",
+          "unit": "ns/op",
+          "direction": "LOWER"
+        },
+        "parameters": {
+          "events": "10000"
+        },
+        "configuration": {
+          "jvmArgs": [
+            "-Xms256m",
+            "-Xmx256m",
+            "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+          ],
+          "forkCount": 3,
+          "warmupTimeMs": 1000,
+          "warmupIterations": 3,
+          "measurementTimeMs": 1000,
+          "measurementIterations": 5
+        },
+        "configurationSha256": "6c6372f61a2c60e9f2687d0eb74936a0a2550775d03c7b65de400cfe7cbd7d53",
+        "sampleCount": 15
+      }
+    ]
+  },
+  "pullRequest": {
+    "id": "3f59bd9e-c6d0-4745-9143-87156797aafe",
+    "repositoryId": "14a8fdaf-a7ae-4313-88a6-013754455c93",
+    "number": 3,
+    "title": "Evaluation: copy query index on every lookup",
+    "githubUrl": "https://github.com/300-iq/regresslab-java-demo/pull/3",
+    "state": "OPEN",
+    "baselineSha": "55a1c4030211cff11169f26cf75e0771e58efaf1",
+    "candidateSha": "a98e5d9d96298137504be7fa4ba01f9e17033482",
+    "updatedAt": "2026-10-14T16:52:10.359629Z",
+    "dataOrigin": "REAL",
+    "provenance": "GITHUB_METADATA"
+  }
+}

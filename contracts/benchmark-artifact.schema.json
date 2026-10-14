@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://regresslab.dev/contracts/benchmark-artifact.v1.json",
+  "title": "RegressLab Java/JMH comparison artifact v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "dataOrigin", "repository", "pullRequestNumber", "workflow", "baselineSha", "candidateSha", "measuredAt", "environment", "benchmarks"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "dataOrigin": { "enum": ["REAL", "DEMO"] },
+    "repository": {
+      "type": "object", "additionalProperties": false,
+      "required": ["githubId", "fullName"],
+      "properties": {
+        "githubId": { "$ref": "#/$defs/positiveInteger" },
+        "fullName": { "type": "string", "maxLength": 140, "pattern": "^[A-Za-z0-9][A-Za-z0-9-]{0,38}/[A-Za-z0-9_.-]{1,100}$" }
+      }
+    },
+    "pullRequestNumber": { "$ref": "#/$defs/positiveInteger" },
+    "workflow": {
+      "type": "object", "additionalProperties": false, "required": ["runId", "runAttempt"],
+      "properties": { "runId": { "$ref": "#/$defs/positiveInteger" }, "runAttempt": { "type": "integer", "minimum": 1, "maximum": 2147483647 } }
+    },
+    "baselineSha": { "$ref": "#/$defs/sha" },
+    "candidateSha": { "$ref": "#/$defs/sha" },
+    "measuredAt": { "type": "string", "format": "date-time", "maxLength": 40 },
+    "environment": {
+      "type": "object", "additionalProperties": false,
+      "required": ["runner", "os", "architecture", "cpu", "javaVersion", "jmhVersion"],
+      "properties": {
+        "runner": { "$ref": "#/$defs/label" }, "os": { "$ref": "#/$defs/label" },
+        "architecture": { "enum": ["x86_64", "aarch64"] },
+        "cpu": { "$ref": "#/$defs/label" }, "javaVersion": { "$ref": "#/$defs/label" },
+        "jmhVersion": { "const": "1.37" }
+      }
+    },
+    "benchmarks": { "type": "array", "minItems": 1, "maxItems": 20, "items": { "$ref": "#/$defs/benchmark" } }
+  },
+  "$defs": {
+    "positiveInteger": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+    "sha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "label": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "benchmark": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "parameters", "metric", "unit", "direction", "configuration", "baseline", "candidate"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1, "maxLength": 200, "pattern": "^[A-Za-z0-9_.$-]+$" },
+        "parameters": {
+          "type": "object", "maxProperties": 10,
+          "propertyNames": { "pattern": "^[A-Za-z0-9_]{1,50}$" },
+          "additionalProperties": { "type": "string", "maxLength": 100 }
+        },
+        "metric": { "const": "average_time" }, "unit": { "const": "ns/op" }, "direction": { "const": "LOWER" },
+        "configuration": {
+          "type": "object", "additionalProperties": false,
+          "required": ["warmupIterations", "measurementIterations", "forkCount", "warmupTimeMs", "measurementTimeMs", "jvmArgs"],
+          "properties": {
+            "warmupIterations": { "type": "integer", "minimum": 1, "maximum": 30 },
+            "measurementIterations": { "type": "integer", "minimum": 5, "maximum": 30 },
+            "forkCount": { "type": "integer", "minimum": 3, "maximum": 10 },
+            "warmupTimeMs": { "type": "integer", "minimum": 100, "maximum": 60000 },
+            "measurementTimeMs": { "type": "integer", "minimum": 100, "maximum": 60000 },
+            "jvmArgs": { "type": "array", "maxItems": 32, "items": { "type": "string", "maxLength": 200 } }
+          }
+        },
+        "baseline": { "$ref": "#/$defs/forks" }, "candidate": { "$ref": "#/$defs/forks" }
+      }
+    },
+    "forks": { "type": "array", "minItems": 3, "maxItems": 10, "items": { "$ref": "#/$defs/fork" } },
+    "fork": {
+      "type": "object", "additionalProperties": false, "required": ["forkIndex", "observations"],
+      "properties": {
+        "forkIndex": { "type": "integer", "minimum": 0, "maximum": 9 },
+        "observations": { "type": "array", "minItems": 5, "maxItems": 30, "items": { "$ref": "#/$defs/observation" } }
+      }
+    },
+    "observation": {
+      "type": "object", "additionalProperties": false, "required": ["iterationIndex", "value"],
+      "properties": {
+        "iterationIndex": { "type": "integer", "minimum": 0, "maximum": 29 },
+        "value": { "type": "number", "exclusiveMinimum": 0, "maximum": 1000000000000000 }
+      }
+    }
+  }
+}

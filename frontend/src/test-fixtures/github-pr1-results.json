@@ -1,0 +1,1616 @@
+{
+  "notice": "Real executed Java measurements from a public demonstration workload. GitHub origin metadata checked; no statistical significance or measurement attestation.",
+  "imported": {
+    "baseline": {
+      "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+      "pullRequestId": "02d0afdb-375e-4d70-ad5d-7a78e5a497a7",
+      "runId": "586f7460-19ab-4f32-aaf9-e37f4a7d83ff",
+      "artifactId": "e33eeb45-08b4-4679-b1dd-11f170c0dc1a",
+      "artifactSha256": "8f698e69171af2ba50a409db7136ad3f6b85bd25cbcd2388da20c0a36adbf4a9",
+      "dataOrigin": "REAL",
+      "provenance": "GITHUB_METADATA",
+      "replayed": false
+    },
+    "candidate": {
+      "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+      "pullRequestId": "02d0afdb-375e-4d70-ad5d-7a78e5a497a7",
+      "runId": "a9e21fc7-0ed8-4bf6-879d-8cb42753cf83",
+      "artifactId": "8530315f-01ce-43d0-a345-fd7911af2048",
+      "artifactSha256": "c4842e2000c381462677a5c066324dcb977b57f5e7fe0d63fdc43db384b508a9",
+      "dataOrigin": "REAL",
+      "provenance": "GITHUB_METADATA",
+      "replayed": false
+    }
+  },
+  "overview": {
+    "repositories": 1,
+    "pullRequests": 1,
+    "comparisons": 2,
+    "observations": 60
+  },
+  "pullRequest": {
+    "id": "02d0afdb-375e-4d70-ad5d-7a78e5a497a7",
+    "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+    "number": 1,
+    "title": "Demonstrate aggregate-on-read event queries",
+    "githubUrl": "https://github.com/300-iq/regresslab-java-demo/pull/1",
+    "state": "OPEN",
+    "baselineSha": "e6435b3967c06f9dd7d25f8e8f8c857d2ad28d25",
+    "candidateSha": "41e3ff909bdb246c563fbe4e1bfc13565778e864",
+    "updatedAt": "2026-10-13T19:19:00.275008Z",
+    "dataOrigin": "REAL",
+    "provenance": "GITHUB_METADATA"
+  },
+  "baseline": {
+    "run": {
+      "id": "586f7460-19ab-4f32-aaf9-e37f4a7d83ff",
+      "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+      "pullRequestId": "02d0afdb-375e-4d70-ad5d-7a78e5a497a7",
+      "workflowRunId": 38449649490,
+      "runAttempt": 1,
+      "githubUrl": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38449649490",
+      "commitSha": "e6435b3967c06f9dd7d25f8e8f8c857d2ad28d25",
+      "baselineSha": "e6435b3967c06f9dd7d25f8e8f8c857d2ad28d25",
+      "candidateSha": "41e3ff909bdb246c563fbe4e1bfc13565778e864",
+      "branch": "main",
+      "measuredAt": "2026-10-13T18:48:14.312511Z",
+      "environment": {
+        "os": "Linux 6.17.0-1022-azure",
+        "cpu": "AMD EPYC 7763 64-Core Processor",
+        "runner": "github-hosted:GitHub Actions 1000000006",
+        "jmhVersion": "1.37",
+        "javaVersion": "21.0.12.1",
+        "architecture": "x86_64"
+      },
+      "environmentSha256": "d387ccb6998f77921060c6ea8d8fe8f20b6586ae2fc5b3972599773c5e2ad636",
+      "status": "COMPLETE",
+      "dataOrigin": "REAL",
+      "provenance": "GITHUB_METADATA",
+      "artifactId": "e33eeb45-08b4-4679-b1dd-11f170c0dc1a",
+      "artifactIdentifier": "github-38449649490-1-baseline",
+      "artifactSha256": "8f698e69171af2ba50a409db7136ad3f6b85bd25cbcd2388da20c0a36adbf4a9",
+      "importedAt": "2026-10-13T19:19:00.275008Z"
+    },
+    "benchmarks": [
+      {
+        "benchmarkCase": {
+          "id": "deeda7b9-51aa-49dd-a283-5a37236eb062",
+          "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+          "identifier": "dev.regresslab.demo.EventBenchmarks.countByCategory",
+          "metricName": "average_time",
+          "unit": "ns/op",
+          "direction": "LOWER"
+        },
+        "parameters": {
+          "events": "10000"
+        },
+        "configuration": {
+          "jvmArgs": [
+            "-Xms256m",
+            "-Xmx256m",
+            "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+          ],
+          "forkCount": 3,
+          "warmupTimeMs": 1000,
+          "warmupIterations": 3,
+          "measurementTimeMs": 1000,
+          "measurementIterations": 5
+        },
+        "configurationSha256": "b79902decbe514bdb3cae5fe0b76bed6a32e9d8c712f3c939990ae97a238a93b",
+        "sampleCount": 15
+      },
+      {
+        "benchmarkCase": {
+          "id": "dc83aee3-b567-4ebc-bbb0-aed44377e2b1",
+          "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+          "identifier": "dev.regresslab.demo.EventBenchmarks.distinctCategories",
+          "metricName": "average_time",
+          "unit": "ns/op",
+          "direction": "LOWER"
+        },
+        "parameters": {
+          "events": "10000"
+        },
+        "configuration": {
+          "jvmArgs": [
+            "-Xms256m",
+            "-Xmx256m",
+            "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+          ],
+          "forkCount": 3,
+          "warmupTimeMs": 1000,
+          "warmupIterations": 3,
+          "measurementTimeMs": 1000,
+          "measurementIterations": 5
+        },
+        "configurationSha256": "6c6372f61a2c60e9f2687d0eb74936a0a2550775d03c7b65de400cfe7cbd7d53",
+        "sampleCount": 15
+      }
+    ]
+  },
+  "candidate": {
+    "run": {
+      "id": "a9e21fc7-0ed8-4bf6-879d-8cb42753cf83",
+      "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+      "pullRequestId": "02d0afdb-375e-4d70-ad5d-7a78e5a497a7",
+      "workflowRunId": 38449649490,
+      "runAttempt": 1,
+      "githubUrl": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38449649490",
+      "commitSha": "41e3ff909bdb246c563fbe4e1bfc13565778e864",
+      "baselineSha": "e6435b3967c06f9dd7d25f8e8f8c857d2ad28d25",
+      "candidateSha": "41e3ff909bdb246c563fbe4e1bfc13565778e864",
+      "branch": "demo/aggregate-on-read",
+      "measuredAt": "2026-10-13T18:48:31.311833Z",
+      "environment": {
+        "os": "Linux 6.17.0-1022-azure",
+        "cpu": "AMD EPYC 7763 64-Core Processor",
+        "runner": "github-hosted:GitHub Actions 1000000006",
+        "jmhVersion": "1.37",
+        "javaVersion": "21.0.12.1",
+        "architecture": "x86_64"
+      },
+      "environmentSha256": "d387ccb6998f77921060c6ea8d8fe8f20b6586ae2fc5b3972599773c5e2ad636",
+      "status": "COMPLETE",
+      "dataOrigin": "REAL",
+      "provenance": "GITHUB_METADATA",
+      "artifactId": "8530315f-01ce-43d0-a345-fd7911af2048",
+      "artifactIdentifier": "github-38449649490-1-candidate",
+      "artifactSha256": "c4842e2000c381462677a5c066324dcb977b57f5e7fe0d63fdc43db384b508a9",
+      "importedAt": "2026-10-13T19:19:00.275008Z"
+    },
+    "benchmarks": [
+      {
+        "benchmarkCase": {
+          "id": "deeda7b9-51aa-49dd-a283-5a37236eb062",
+          "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+          "identifier": "dev.regresslab.demo.EventBenchmarks.countByCategory",
+          "metricName": "average_time",
+          "unit": "ns/op",
+          "direction": "LOWER"
+        },
+        "parameters": {
+          "events": "10000"
+        },
+        "configuration": {
+          "jvmArgs": [
+            "-Xms256m",
+            "-Xmx256m",
+            "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+          ],
+          "forkCount": 3,
+          "warmupTimeMs": 1000,
+          "warmupIterations": 3,
+          "measurementTimeMs": 1000,
+          "measurementIterations": 5
+        },
+        "configurationSha256": "b79902decbe514bdb3cae5fe0b76bed6a32e9d8c712f3c939990ae97a238a93b",
+        "sampleCount": 15
+      },
+      {
+        "benchmarkCase": {
+          "id": "dc83aee3-b567-4ebc-bbb0-aed44377e2b1",
+          "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+          "identifier": "dev.regresslab.demo.EventBenchmarks.distinctCategories",
+          "metricName": "average_time",
+          "unit": "ns/op",
+          "direction": "LOWER"
+        },
+        "parameters": {
+          "events": "10000"
+        },
+        "configuration": {
+          "jvmArgs": [
+            "-Xms256m",
+            "-Xmx256m",
+            "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+          ],
+          "forkCount": 3,
+          "warmupTimeMs": 1000,
+          "warmupIterations": 3,
+          "measurementTimeMs": 1000,
+          "measurementIterations": 5
+        },
+        "configurationSha256": "6c6372f61a2c60e9f2687d0eb74936a0a2550775d03c7b65de400cfe7cbd7d53",
+        "sampleCount": 15
+      }
+    ]
+  },
+  "comparisons": [
+    {
+      "id": "ad9444b3-a45c-4321-92c8-8ed050be992e",
+      "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+      "baselineRunId": "586f7460-19ab-4f32-aaf9-e37f4a7d83ff",
+      "candidateRunId": "a9e21fc7-0ed8-4bf6-879d-8cb42753cf83",
+      "benchmarkCaseId": "deeda7b9-51aa-49dd-a283-5a37236eb062",
+      "analysisVersion": "fork-descriptive-v2",
+      "analysisStatus": "INSUFFICIENT_EVIDENCE",
+      "summary": {
+        "baselineForks": 3,
+        "candidateForks": 3,
+        "baselineSamples": 15,
+        "candidateSamples": 15,
+        "baselineMean": 3.5609865991820175,
+        "candidateMean": 36949.92671985723,
+        "baselineMedian": 3.555361734541787,
+        "candidateMedian": 36961.187942374796,
+        "baselineStdDev": 0.02791071408031386,
+        "candidateStdDev": 122.11264741036719,
+        "baselineCv": 0.007837916067059938,
+        "candidateCv": 0.0033048143325475864,
+        "candidateBaselineRatio": 10376.317262284803,
+        "degradationPercent": 1037531.7262284803
+      },
+      "reasons": [
+        "ARTIFACT_MEASUREMENTS_UNTRUSTED",
+        "INFERENTIAL_ANALYSIS_NOT_IMPLEMENTED",
+        "FEWER_THAN_10_INDEPENDENT_FORKS"
+      ],
+      "dataOrigin": "REAL",
+      "provenance": "GITHUB_METADATA",
+      "createdAt": "2026-10-13T19:19:00.353893Z"
+    },
+    {
+      "id": "49f07fa8-60be-4ba3-83a9-e3377070bb6b",
+      "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+      "baselineRunId": "586f7460-19ab-4f32-aaf9-e37f4a7d83ff",
+      "candidateRunId": "a9e21fc7-0ed8-4bf6-879d-8cb42753cf83",
+      "benchmarkCaseId": "dc83aee3-b567-4ebc-bbb0-aed44377e2b1",
+      "analysisVersion": "fork-descriptive-v2",
+      "analysisStatus": "INSUFFICIENT_EVIDENCE",
+      "summary": {
+        "baselineForks": 3,
+        "candidateForks": 3,
+        "baselineSamples": 15,
+        "candidateSamples": 15,
+        "baselineMean": 0.9344645103212658,
+        "candidateMean": 103925.53039362592,
+        "baselineMedian": 0.9264512115585477,
+        "candidateMedian": 105256.18808352653,
+        "baselineStdDev": 0.015745076388388134,
+        "candidateStdDev": 5081.97723834081,
+        "baselineCv": 0.016849303761118792,
+        "candidateCv": 0.048900180918898674,
+        "candidateBaselineRatio": 111213.99394600515,
+        "degradationPercent": 11121299.394600516
+      },
+      "reasons": [
+        "ARTIFACT_MEASUREMENTS_UNTRUSTED",
+        "INFERENTIAL_ANALYSIS_NOT_IMPLEMENTED",
+        "FEWER_THAN_10_INDEPENDENT_FORKS"
+      ],
+      "dataOrigin": "REAL",
+      "provenance": "GITHUB_METADATA",
+      "createdAt": "2026-10-13T19:19:00.373844Z"
+    }
+  ],
+  "audit": {
+    "githubArtifactId": 11838908962,
+    "archiveSha256": "74375dcea3b2873efc57167a96614d5d1c512d355de508cb945050119bca1205",
+    "verifiedAt": "2026-10-13T19:19:00.275008Z",
+    "execution": {
+      "order": [
+        "BASELINE",
+        "CANDIDATE",
+        "CANDIDATE",
+        "BASELINE",
+        "BASELINE",
+        "CANDIDATE"
+      ],
+      "blocks": [
+        {
+          "arm": "BASELINE",
+          "error": null,
+          "status": "COMPLETE",
+          "exitCode": 0,
+          "elapsedMs": 16999,
+          "forkIndex": 0,
+          "startedAt": "2026-10-13T18:48:14.312511Z",
+          "finishedAt": "2026-10-13T18:48:31.311440Z",
+          "observations": [
+            {
+              "unit": "ns/op",
+              "values": [
+                3.527828583008911,
+                3.5797840224234365,
+                3.5692174922453073,
+                3.5212021114244996,
+                3.5787764636067796
+              ],
+              "identifier": "dev.regresslab.demo.EventBenchmarks.countByCategory"
+            },
+            {
+              "unit": "ns/op",
+              "values": [
+                0.947445763474776,
+                0.9623524748262595,
+                0.9537233066219504,
+                0.9579903449711709,
+                0.9415099741456295
+              ],
+              "identifier": "dev.regresslab.demo.EventBenchmarks.distinctCategories"
+            }
+          ]
+        },
+        {
+          "arm": "CANDIDATE",
+          "error": null,
+          "status": "COMPLETE",
+          "exitCode": 0,
+          "elapsedMs": 16897,
+          "forkIndex": 0,
+          "startedAt": "2026-10-13T18:48:31.311833Z",
+          "finishedAt": "2026-10-13T18:48:48.208343Z",
+          "observations": [
+            {
+              "unit": "ns/op",
+              "values": [
+                36843.630272221606,
+                37174.56756857206,
+                37154.02644677216,
+                36858.56629569575,
+                36775.1491286124
+              ],
+              "identifier": "dev.regresslab.demo.EventBenchmarks.countByCategory"
+            },
+            {
+              "unit": "ns/op",
+              "values": [
+                104127.83262204642,
+                104133.24164497657,
+                104377.57090681414,
+                106082.6809841977,
+                107559.6142595978
+              ],
+              "identifier": "dev.regresslab.demo.EventBenchmarks.distinctCategories"
+            }
+          ]
+        },
+        {
+          "arm": "CANDIDATE",
+          "error": null,
+          "status": "COMPLETE",
+          "exitCode": 0,
+          "elapsedMs": 16950,
+          "forkIndex": 1,
+          "startedAt": "2026-10-13T18:48:48.208811Z",
+          "finishedAt": "2026-10-13T18:49:05.158682Z",
+          "observations": [
+            {
+              "unit": "ns/op",
+              "values": [
+                36714.72773658322,
+                37112.75701627554,
+                36789.328858319845,
+                36727.489607814336,
+                36768.5644070289
+              ],
+              "identifier": "dev.regresslab.demo.EventBenchmarks.countByCategory"
+            },
+            {
+              "unit": "ns/op",
+              "values": [
+                97971.1575080811,
+                97776.01896383187,
+                98107.75762628739,
+                98714.50227003553,
+                98983.58901533895
+              ],
+              "identifier": "dev.regresslab.demo.EventBenchmarks.distinctCategories"
+            }
+          ]
+        },
+        {
+          "arm": "BASELINE",
+          "error": null,
+          "status": "COMPLETE",
+          "exitCode": 0,
+          "elapsedMs": 16906,
+          "forkIndex": 1,
+          "startedAt": "2026-10-13T18:49:05.159155Z",
+          "finishedAt": "2026-10-13T18:49:22.065441Z",
+          "observations": [
+            {
+              "unit": "ns/op",
+              "values": [
+                3.5026079525232263,
+                3.60053944275416,
+                3.5060158154451653,
+                3.5371870167312887,
+                3.535233264448756
+              ],
+              "identifier": "dev.regresslab.demo.EventBenchmarks.countByCategory"
+            },
+            {
+              "unit": "ns/op",
+              "values": [
+                0.9239524847428412,
+                0.9350764803704238,
+                0.9180657040254055,
+                0.9254008119807713,
+                0.919194251867019
+              ],
+              "identifier": "dev.regresslab.demo.EventBenchmarks.distinctCategories"
+            }
+          ]
+        },
+        {
+          "arm": "BASELINE",
+          "error": null,
+          "status": "COMPLETE",
+          "exitCode": 0,
+          "elapsedMs": 16909,
+          "forkIndex": 2,
+          "startedAt": "2026-10-13T18:49:22.065890Z",
+          "finishedAt": "2026-10-13T18:49:38.974826Z",
+          "observations": [
+            {
+              "unit": "ns/op",
+              "values": [
+                3.583926317754485,
+                3.5996765897466583,
+                3.499695922778819,
+                3.6019319517700885,
+                3.671176041068683
+              ],
+              "identifier": "dev.regresslab.demo.EventBenchmarks.countByCategory"
+            },
+            {
+              "unit": "ns/op",
+              "values": [
+                0.9230858131780822,
+                0.9282894435181537,
+                0.9245860012999951,
+                0.9305870694785794,
+                0.9257077303179277
+              ],
+              "identifier": "dev.regresslab.demo.EventBenchmarks.distinctCategories"
+            }
+          ]
+        },
+        {
+          "arm": "CANDIDATE",
+          "error": null,
+          "status": "COMPLETE",
+          "exitCode": 0,
+          "elapsedMs": 16907,
+          "forkIndex": 2,
+          "startedAt": "2026-10-13T18:49:38.975317Z",
+          "finishedAt": "2026-10-13T18:49:55.882317Z",
+          "observations": [
+            {
+              "unit": "ns/op",
+              "values": [
+                36720.69678840154,
+                36911.25575730735,
+                37332.37871832195,
+                37661.229205106,
+                36704.53299082569
+              ],
+              "identifier": "dev.regresslab.demo.EventBenchmarks.countByCategory"
+            },
+            {
+              "unit": "ns/op",
+              "values": [
+                107496.38645889307,
+                109378.63061782395,
+                107388.5779471763,
+                108999.47515257193,
+                107785.91992671625
+              ],
+              "identifier": "dev.regresslab.demo.EventBenchmarks.distinctCategories"
+            }
+          ]
+        }
+      ],
+      "builds": {
+        "BASELINE": {
+          "error": null,
+          "status": "COMPLETE",
+          "exitCode": 0,
+          "elapsedMs": 13610,
+          "startedAt": "2026-10-13T18:47:55.833668Z",
+          "finishedAt": "2026-10-13T18:48:09.443382Z"
+        },
+        "CANDIDATE": {
+          "error": null,
+          "status": "COMPLETE",
+          "exitCode": 0,
+          "elapsedMs": 4740,
+          "startedAt": "2026-10-13T18:48:09.508364Z",
+          "finishedAt": "2026-10-13T18:48:14.247996Z"
+        }
+      },
+      "strategy": "alternating-forks-v1",
+      "harnessSha256": "1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9",
+      "schemaVersion": 1
+    },
+    "verificationEvidence": {
+      "run": {
+        "id": 38449649490,
+        "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/actions/runs/38449649490",
+        "name": "RegressLab Java benchmarks",
+        "path": ".github/workflows/benchmark.yml",
+        "actor": {
+          "id": 69645454,
+          "url": "https://api.github.com/users/300-iq",
+          "type": "User",
+          "login": "300-iq",
+          "node_id": "MDQ6VXNlcjY5NjQ1NDU0",
+          "html_url": "https://github.com/300-iq",
+          "gists_url": "https://api.github.com/users/300-iq/gists{/gist_id}",
+          "repos_url": "https://api.github.com/users/300-iq/repos",
+          "avatar_url": "https://avatars.githubusercontent.com/u/69645454?v=4",
+          "events_url": "https://api.github.com/users/300-iq/events{/privacy}",
+          "site_admin": false,
+          "gravatar_id": "",
+          "starred_url": "https://api.github.com/users/300-iq/starred{/owner}{/repo}",
+          "followers_url": "https://api.github.com/users/300-iq/followers",
+          "following_url": "https://api.github.com/users/300-iq/following{/other_user}",
+          "user_view_type": "public",
+          "organizations_url": "https://api.github.com/users/300-iq/orgs",
+          "subscriptions_url": "https://api.github.com/users/300-iq/subscriptions",
+          "received_events_url": "https://api.github.com/users/300-iq/received_events"
+        },
+        "event": "pull_request",
+        "status": "completed",
+        "node_id": "WFR_kwLOVID9RM8AAAAI88cXUg",
+        "head_sha": "41e3ff909bdb246c563fbe4e1bfc13565778e864",
+        "html_url": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38449649490",
+        "jobs_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/actions/runs/38449649490/jobs",
+        "logs_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/actions/runs/38449649490/logs",
+        "rerun_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/actions/runs/38449649490/rerun",
+        "cancel_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/actions/runs/38449649490/cancel",
+        "conclusion": "success",
+        "created_at": "2026-10-13T18:47:46Z",
+        "repository": {
+          "id": 1417739588,
+          "url": "https://api.github.com/repos/300-iq/regresslab-java-demo",
+          "fork": false,
+          "name": "regresslab-java-demo",
+          "owner": {
+            "id": 69645454,
+            "url": "https://api.github.com/users/300-iq",
+            "type": "User",
+            "login": "300-iq",
+            "node_id": "MDQ6VXNlcjY5NjQ1NDU0",
+            "html_url": "https://github.com/300-iq",
+            "gists_url": "https://api.github.com/users/300-iq/gists{/gist_id}",
+            "repos_url": "https://api.github.com/users/300-iq/repos",
+            "avatar_url": "https://avatars.githubusercontent.com/u/69645454?v=4",
+            "events_url": "https://api.github.com/users/300-iq/events{/privacy}",
+            "site_admin": false,
+            "gravatar_id": "",
+            "starred_url": "https://api.github.com/users/300-iq/starred{/owner}{/repo}",
+            "followers_url": "https://api.github.com/users/300-iq/followers",
+            "following_url": "https://api.github.com/users/300-iq/following{/other_user}",
+            "user_view_type": "public",
+            "organizations_url": "https://api.github.com/users/300-iq/orgs",
+            "subscriptions_url": "https://api.github.com/users/300-iq/subscriptions",
+            "received_events_url": "https://api.github.com/users/300-iq/received_events"
+          },
+          "node_id": "R_kgDOVID9RA",
+          "private": false,
+          "html_url": "https://github.com/300-iq/regresslab-java-demo",
+          "keys_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/keys{/key_id}",
+          "tags_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/tags",
+          "blobs_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs{/sha}",
+          "forks_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/forks",
+          "full_name": "300-iq/regresslab-java-demo",
+          "hooks_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/hooks",
+          "pulls_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/pulls{/number}",
+          "teams_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/teams",
+          "trees_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees{/sha}",
+          "events_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/events",
+          "issues_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues{/number}",
+          "labels_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/labels{/name}",
+          "merges_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/merges",
+          "archive_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/{archive_format}{/ref}",
+          "commits_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/commits{/sha}",
+          "compare_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/compare/{base}...{head}",
+          "description": "Real Java/JMH benchmark measurements for RegressLab: a public event-aggregation performance investigation.",
+          "branches_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/branches{/branch}",
+          "comments_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/comments{/number}",
+          "contents_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/contents/{+path}",
+          "git_refs_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/refs{/sha}",
+          "git_tags_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/tags{/sha}",
+          "releases_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/releases{/id}",
+          "statuses_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/statuses/{sha}",
+          "assignees_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/assignees{/user}",
+          "downloads_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/downloads",
+          "languages_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/languages",
+          "milestones_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/milestones{/number}",
+          "stargazers_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/stargazers",
+          "deployments_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/deployments",
+          "git_commits_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/commits{/sha}",
+          "subscribers_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/subscribers",
+          "contributors_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/contributors",
+          "issue_events_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues/events{/number}",
+          "subscription_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/subscription",
+          "collaborators_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/collaborators{/collaborator}",
+          "issue_comment_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues/comments{/number}",
+          "notifications_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/notifications{?since,all,participating}"
+        },
+        "run_number": 1,
+        "updated_at": "2026-10-13T18:50:02Z",
+        "head_branch": "demo/aggregate-on-read",
+        "head_commit": {
+          "id": "41e3ff909bdb246c563fbe4e1bfc13565778e864",
+          "author": {
+            "name": "Praneeth",
+            "email": "69645454+300-iq@users.noreply.github.com"
+          },
+          "message": "Demonstrate aggregate-on-read queries instead of a precomputed index",
+          "tree_id": "0a1e656fd3296c7278c76c8b5cfd3dfdc225d44d",
+          "committer": {
+            "name": "Praneeth",
+            "email": "69645454+300-iq@users.noreply.github.com"
+          },
+          "timestamp": "2026-10-13T18:46:43Z"
+        },
+        "run_attempt": 1,
+        "workflow_id": 383549664,
+        "workflow_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/actions/workflows/383549664",
+        "artifacts_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/actions/runs/38449649490/artifacts",
+        "display_title": "Demonstrate aggregate-on-read event queries",
+        "pull_requests": [
+          {
+            "id": 4847900955,
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/pulls/1",
+            "base": {
+              "ref": "main",
+              "sha": "e6435b3967c06f9dd7d25f8e8f8c857d2ad28d25",
+              "repo": {
+                "id": 1417739588,
+                "url": "https://api.github.com/repos/300-iq/regresslab-java-demo",
+                "name": "regresslab-java-demo"
+              }
+            },
+            "head": {
+              "ref": "demo/aggregate-on-read",
+              "sha": "41e3ff909bdb246c563fbe4e1bfc13565778e864",
+              "repo": {
+                "id": 1417739588,
+                "url": "https://api.github.com/repos/300-iq/regresslab-java-demo",
+                "name": "regresslab-java-demo"
+              }
+            },
+            "number": 1
+          }
+        ],
+        "check_suite_id": 104184925622,
+        "run_started_at": "2026-10-13T18:47:46Z",
+        "check_suite_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/check-suites/104184925622",
+        "head_repository": {
+          "id": 1417739588,
+          "url": "https://api.github.com/repos/300-iq/regresslab-java-demo",
+          "fork": false,
+          "name": "regresslab-java-demo",
+          "owner": {
+            "id": 69645454,
+            "url": "https://api.github.com/users/300-iq",
+            "type": "User",
+            "login": "300-iq",
+            "node_id": "MDQ6VXNlcjY5NjQ1NDU0",
+            "html_url": "https://github.com/300-iq",
+            "gists_url": "https://api.github.com/users/300-iq/gists{/gist_id}",
+            "repos_url": "https://api.github.com/users/300-iq/repos",
+            "avatar_url": "https://avatars.githubusercontent.com/u/69645454?v=4",
+            "events_url": "https://api.github.com/users/300-iq/events{/privacy}",
+            "site_admin": false,
+            "gravatar_id": "",
+            "starred_url": "https://api.github.com/users/300-iq/starred{/owner}{/repo}",
+            "followers_url": "https://api.github.com/users/300-iq/followers",
+            "following_url": "https://api.github.com/users/300-iq/following{/other_user}",
+            "user_view_type": "public",
+            "organizations_url": "https://api.github.com/users/300-iq/orgs",
+            "subscriptions_url": "https://api.github.com/users/300-iq/subscriptions",
+            "received_events_url": "https://api.github.com/users/300-iq/received_events"
+          },
+          "node_id": "R_kgDOVID9RA",
+          "private": false,
+          "html_url": "https://github.com/300-iq/regresslab-java-demo",
+          "keys_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/keys{/key_id}",
+          "tags_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/tags",
+          "blobs_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs{/sha}",
+          "forks_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/forks",
+          "full_name": "300-iq/regresslab-java-demo",
+          "hooks_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/hooks",
+          "pulls_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/pulls{/number}",
+          "teams_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/teams",
+          "trees_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees{/sha}",
+          "events_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/events",
+          "issues_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues{/number}",
+          "labels_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/labels{/name}",
+          "merges_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/merges",
+          "archive_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/{archive_format}{/ref}",
+          "commits_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/commits{/sha}",
+          "compare_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/compare/{base}...{head}",
+          "description": "Real Java/JMH benchmark measurements for RegressLab: a public event-aggregation performance investigation.",
+          "branches_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/branches{/branch}",
+          "comments_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/comments{/number}",
+          "contents_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/contents/{+path}",
+          "git_refs_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/refs{/sha}",
+          "git_tags_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/tags{/sha}",
+          "releases_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/releases{/id}",
+          "statuses_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/statuses/{sha}",
+          "assignees_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/assignees{/user}",
+          "downloads_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/downloads",
+          "languages_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/languages",
+          "milestones_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/milestones{/number}",
+          "stargazers_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/stargazers",
+          "deployments_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/deployments",
+          "git_commits_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/commits{/sha}",
+          "subscribers_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/subscribers",
+          "contributors_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/contributors",
+          "issue_events_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues/events{/number}",
+          "subscription_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/subscription",
+          "collaborators_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/collaborators{/collaborator}",
+          "issue_comment_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues/comments{/number}",
+          "notifications_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/notifications{?since,all,participating}"
+        },
+        "triggering_actor": {
+          "id": 69645454,
+          "url": "https://api.github.com/users/300-iq",
+          "type": "User",
+          "login": "300-iq",
+          "node_id": "MDQ6VXNlcjY5NjQ1NDU0",
+          "html_url": "https://github.com/300-iq",
+          "gists_url": "https://api.github.com/users/300-iq/gists{/gist_id}",
+          "repos_url": "https://api.github.com/users/300-iq/repos",
+          "avatar_url": "https://avatars.githubusercontent.com/u/69645454?v=4",
+          "events_url": "https://api.github.com/users/300-iq/events{/privacy}",
+          "site_admin": false,
+          "gravatar_id": "",
+          "starred_url": "https://api.github.com/users/300-iq/starred{/owner}{/repo}",
+          "followers_url": "https://api.github.com/users/300-iq/followers",
+          "following_url": "https://api.github.com/users/300-iq/following{/other_user}",
+          "user_view_type": "public",
+          "organizations_url": "https://api.github.com/users/300-iq/orgs",
+          "subscriptions_url": "https://api.github.com/users/300-iq/subscriptions",
+          "received_events_url": "https://api.github.com/users/300-iq/received_events"
+        },
+        "check_suite_node_id": "CS_kwDOVID9RM8AAAAYQefNtg",
+        "previous_attempt_url": null,
+        "referenced_workflows": []
+      },
+      "artifact": {
+        "id": 11838908962,
+        "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/actions/artifacts/11838908962",
+        "name": "regresslab-baseline-1",
+        "digest": "sha256:74375dcea3b2873efc57167a96614d5d1c512d355de508cb945050119bca1205",
+        "expired": false,
+        "node_id": "MDg6QXJ0aWZhY3QxMTgzODkwODk2Mg==",
+        "created_at": "2026-10-13T18:49:56Z",
+        "expires_at": "2026-11-12T18:49:56Z",
+        "updated_at": "2026-10-13T18:49:56Z",
+        "workflow_run": {
+          "id": 38449649490,
+          "head_sha": "41e3ff909bdb246c563fbe4e1bfc13565778e864",
+          "head_branch": "demo/aggregate-on-read",
+          "repository_id": 1417739588,
+          "head_repository_id": 1417739588
+        },
+        "size_in_bytes": 2800,
+        "archive_download_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/actions/artifacts/11838908962/zip"
+      },
+      "pipeline": {
+        "files": {
+          "pom.xml": "a9e3d4c0a744821d531b95303a704e2871605f03",
+          "run_benchmarks.py": "34f5a14051867318404c219edd83f4f82d58c55d",
+          ".github/workflows/benchmark.yml": "0d9b49c70815c85668112908af4b3f47d585da3d",
+          "src/main/java/dev/regresslab/demo/EventBenchmarks.java": "adf4cc770f63a63f392ea167e969dd5a9881fbe5",
+          "src/test/java/dev/regresslab/demo/EventStatisticsTest.java": "9f9eeb1c6c532b7d8bea9fe94c55096cd42d4cd6"
+        },
+        "workflowPath": ".github/workflows/benchmark.yml",
+        "harnessSha256": "1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9",
+        "repositoryFullName": "300-iq/regresslab-java-demo",
+        "repositoryGithubId": 1417739588
+      },
+      "workflow": {
+        "id": 383549664,
+        "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/actions/workflows/383549664",
+        "name": "RegressLab Java benchmarks",
+        "path": ".github/workflows/benchmark.yml",
+        "state": "active",
+        "node_id": "W_kwDOVID9RM4W3IDg",
+        "html_url": "https://github.com/300-iq/regresslab-java-demo/blob/main/.github/workflows/benchmark.yml",
+        "badge_url": "https://github.com/300-iq/regresslab-java-demo/workflows/RegressLab%20Java%20benchmarks/badge.svg",
+        "created_at": "2026-10-13T18:46:37.000Z",
+        "updated_at": "2026-10-13T18:46:37.000Z"
+      },
+      "repository": {
+        "id": 1417739588,
+        "url": "https://api.github.com/repos/300-iq/regresslab-java-demo",
+        "fork": false,
+        "name": "regresslab-java-demo",
+        "size": 0,
+        "forks": 0,
+        "owner": {
+          "id": 69645454,
+          "url": "https://api.github.com/users/300-iq",
+          "type": "User",
+          "login": "300-iq",
+          "node_id": "MDQ6VXNlcjY5NjQ1NDU0",
+          "html_url": "https://github.com/300-iq",
+          "gists_url": "https://api.github.com/users/300-iq/gists{/gist_id}",
+          "repos_url": "https://api.github.com/users/300-iq/repos",
+          "avatar_url": "https://avatars.githubusercontent.com/u/69645454?v=4",
+          "events_url": "https://api.github.com/users/300-iq/events{/privacy}",
+          "site_admin": false,
+          "gravatar_id": "",
+          "starred_url": "https://api.github.com/users/300-iq/starred{/owner}{/repo}",
+          "followers_url": "https://api.github.com/users/300-iq/followers",
+          "following_url": "https://api.github.com/users/300-iq/following{/other_user}",
+          "user_view_type": "public",
+          "organizations_url": "https://api.github.com/users/300-iq/orgs",
+          "subscriptions_url": "https://api.github.com/users/300-iq/subscriptions",
+          "received_events_url": "https://api.github.com/users/300-iq/received_events"
+        },
+        "topics": [],
+        "git_url": "git://github.com/300-iq/regresslab-java-demo.git",
+        "license": null,
+        "node_id": "R_kgDOVID9RA",
+        "private": false,
+        "ssh_url": "git@github.com:300-iq/regresslab-java-demo.git",
+        "svn_url": "https://github.com/300-iq/regresslab-java-demo",
+        "archived": false,
+        "disabled": false,
+        "has_wiki": true,
+        "homepage": null,
+        "html_url": "https://github.com/300-iq/regresslab-java-demo",
+        "keys_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/keys{/key_id}",
+        "language": "Python",
+        "tags_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/tags",
+        "watchers": 0,
+        "blobs_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs{/sha}",
+        "clone_url": "https://github.com/300-iq/regresslab-java-demo.git",
+        "forks_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/forks",
+        "full_name": "300-iq/regresslab-java-demo",
+        "has_pages": false,
+        "hooks_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/hooks",
+        "pulls_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/pulls{/number}",
+        "pushed_at": "2026-10-13T18:46:43Z",
+        "teams_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/teams",
+        "trees_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees{/sha}",
+        "created_at": "2026-10-13T18:40:14Z",
+        "events_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/events",
+        "has_issues": true,
+        "issues_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues{/number}",
+        "labels_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/labels{/name}",
+        "merges_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/merges",
+        "mirror_url": null,
+        "updated_at": "2026-10-13T18:46:41Z",
+        "visibility": "public",
+        "archive_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/{archive_format}{/ref}",
+        "commits_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/commits{/sha}",
+        "compare_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/compare/{base}...{head}",
+        "description": "Real Java/JMH benchmark measurements for RegressLab: a public event-aggregation performance investigation.",
+        "forks_count": 0,
+        "is_template": false,
+        "open_issues": 1,
+        "branches_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/branches{/branch}",
+        "comments_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/comments{/number}",
+        "contents_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/contents/{+path}",
+        "git_refs_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/refs{/sha}",
+        "git_tags_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/tags{/sha}",
+        "has_projects": true,
+        "releases_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/releases{/id}",
+        "statuses_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/statuses/{sha}",
+        "allow_forking": true,
+        "assignees_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/assignees{/user}",
+        "downloads_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/downloads",
+        "languages_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/languages",
+        "network_count": 0,
+        "default_branch": "main",
+        "milestones_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/milestones{/number}",
+        "stargazers_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/stargazers",
+        "watchers_count": 0,
+        "deployments_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/deployments",
+        "git_commits_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/commits{/sha}",
+        "has_discussions": false,
+        "subscribers_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/subscribers",
+        "contributors_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/contributors",
+        "issue_events_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues/events{/number}",
+        "stargazers_count": 0,
+        "subscription_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/subscription",
+        "temp_clone_token": null,
+        "collaborators_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/collaborators{/collaborator}",
+        "has_pull_requests": true,
+        "issue_comment_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues/comments{/number}",
+        "notifications_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/notifications{?since,all,participating}",
+        "open_issues_count": 1,
+        "subscribers_count": 0,
+        "web_commit_signoff_required": false,
+        "pull_request_creation_policy": "all"
+      },
+      "pullRequest": {
+        "id": 4847900955,
+        "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/pulls/1",
+        "base": {
+          "ref": "main",
+          "sha": "e6435b3967c06f9dd7d25f8e8f8c857d2ad28d25",
+          "repo": {
+            "id": 1417739588,
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo",
+            "fork": false,
+            "name": "regresslab-java-demo",
+            "size": 0,
+            "forks": 0,
+            "owner": {
+              "id": 69645454,
+              "url": "https://api.github.com/users/300-iq",
+              "type": "User",
+              "login": "300-iq",
+              "node_id": "MDQ6VXNlcjY5NjQ1NDU0",
+              "html_url": "https://github.com/300-iq",
+              "gists_url": "https://api.github.com/users/300-iq/gists{/gist_id}",
+              "repos_url": "https://api.github.com/users/300-iq/repos",
+              "avatar_url": "https://avatars.githubusercontent.com/u/69645454?v=4",
+              "events_url": "https://api.github.com/users/300-iq/events{/privacy}",
+              "site_admin": false,
+              "gravatar_id": "",
+              "starred_url": "https://api.github.com/users/300-iq/starred{/owner}{/repo}",
+              "followers_url": "https://api.github.com/users/300-iq/followers",
+              "following_url": "https://api.github.com/users/300-iq/following{/other_user}",
+              "user_view_type": "public",
+              "organizations_url": "https://api.github.com/users/300-iq/orgs",
+              "subscriptions_url": "https://api.github.com/users/300-iq/subscriptions",
+              "received_events_url": "https://api.github.com/users/300-iq/received_events"
+            },
+            "topics": [],
+            "git_url": "git://github.com/300-iq/regresslab-java-demo.git",
+            "license": null,
+            "node_id": "R_kgDOVID9RA",
+            "private": false,
+            "ssh_url": "git@github.com:300-iq/regresslab-java-demo.git",
+            "svn_url": "https://github.com/300-iq/regresslab-java-demo",
+            "archived": false,
+            "disabled": false,
+            "has_wiki": true,
+            "homepage": null,
+            "html_url": "https://github.com/300-iq/regresslab-java-demo",
+            "keys_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/keys{/key_id}",
+            "language": "Python",
+            "tags_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/tags",
+            "watchers": 0,
+            "blobs_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs{/sha}",
+            "clone_url": "https://github.com/300-iq/regresslab-java-demo.git",
+            "forks_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/forks",
+            "full_name": "300-iq/regresslab-java-demo",
+            "has_pages": false,
+            "hooks_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/hooks",
+            "pulls_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/pulls{/number}",
+            "pushed_at": "2026-10-13T18:46:43Z",
+            "teams_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/teams",
+            "trees_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees{/sha}",
+            "created_at": "2026-10-13T18:40:14Z",
+            "events_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/events",
+            "has_issues": true,
+            "issues_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues{/number}",
+            "labels_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/labels{/name}",
+            "merges_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/merges",
+            "mirror_url": null,
+            "updated_at": "2026-10-13T18:46:41Z",
+            "visibility": "public",
+            "archive_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/{archive_format}{/ref}",
+            "commits_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/commits{/sha}",
+            "compare_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/compare/{base}...{head}",
+            "description": "Real Java/JMH benchmark measurements for RegressLab: a public event-aggregation performance investigation.",
+            "forks_count": 0,
+            "is_template": false,
+            "open_issues": 1,
+            "branches_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/branches{/branch}",
+            "comments_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/comments{/number}",
+            "contents_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/contents/{+path}",
+            "git_refs_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/refs{/sha}",
+            "git_tags_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/tags{/sha}",
+            "has_projects": true,
+            "releases_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/releases{/id}",
+            "statuses_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/statuses/{sha}",
+            "allow_forking": true,
+            "assignees_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/assignees{/user}",
+            "downloads_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/downloads",
+            "languages_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/languages",
+            "default_branch": "main",
+            "milestones_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/milestones{/number}",
+            "stargazers_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/stargazers",
+            "watchers_count": 0,
+            "deployments_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/deployments",
+            "git_commits_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/commits{/sha}",
+            "has_discussions": false,
+            "subscribers_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/subscribers",
+            "contributors_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/contributors",
+            "issue_events_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues/events{/number}",
+            "stargazers_count": 0,
+            "subscription_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/subscription",
+            "collaborators_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/collaborators{/collaborator}",
+            "has_pull_requests": true,
+            "issue_comment_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues/comments{/number}",
+            "notifications_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/notifications{?since,all,participating}",
+            "open_issues_count": 1,
+            "web_commit_signoff_required": false,
+            "pull_request_creation_policy": "all"
+          },
+          "user": {
+            "id": 69645454,
+            "url": "https://api.github.com/users/300-iq",
+            "type": "User",
+            "login": "300-iq",
+            "node_id": "MDQ6VXNlcjY5NjQ1NDU0",
+            "html_url": "https://github.com/300-iq",
+            "gists_url": "https://api.github.com/users/300-iq/gists{/gist_id}",
+            "repos_url": "https://api.github.com/users/300-iq/repos",
+            "avatar_url": "https://avatars.githubusercontent.com/u/69645454?v=4",
+            "events_url": "https://api.github.com/users/300-iq/events{/privacy}",
+            "site_admin": false,
+            "gravatar_id": "",
+            "starred_url": "https://api.github.com/users/300-iq/starred{/owner}{/repo}",
+            "followers_url": "https://api.github.com/users/300-iq/followers",
+            "following_url": "https://api.github.com/users/300-iq/following{/other_user}",
+            "user_view_type": "public",
+            "organizations_url": "https://api.github.com/users/300-iq/orgs",
+            "subscriptions_url": "https://api.github.com/users/300-iq/subscriptions",
+            "received_events_url": "https://api.github.com/users/300-iq/received_events"
+          },
+          "label": "300-iq:main"
+        },
+        "body": "This intentionally constructed demonstration moves category aggregation from model construction into each read. The queries retain their results while the implementation changes from a precomputed index to scanning the same 10,000-event workload.\n\nThe pull_request workflow benchmarks the exact base and head commits with the same Java/JMH harness, three fresh forks per case/arm, three warmups and five measured iterations, alternating arm order across fork blocks. It publishes actual raw observations and execution diagnostics for protected import into RegressLab. No production traffic, invented timings, statistical significance, or inferred root cause is claimed.\n\nValidation: the baseline Maven/JMH build, local executed JMH raw-output check, producer tests, and event-query correctness checks passed. Actions supplies the end-to-end measurements.",
+        "head": {
+          "ref": "demo/aggregate-on-read",
+          "sha": "41e3ff909bdb246c563fbe4e1bfc13565778e864",
+          "repo": {
+            "id": 1417739588,
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo",
+            "fork": false,
+            "name": "regresslab-java-demo",
+            "size": 0,
+            "forks": 0,
+            "owner": {
+              "id": 69645454,
+              "url": "https://api.github.com/users/300-iq",
+              "type": "User",
+              "login": "300-iq",
+              "node_id": "MDQ6VXNlcjY5NjQ1NDU0",
+              "html_url": "https://github.com/300-iq",
+              "gists_url": "https://api.github.com/users/300-iq/gists{/gist_id}",
+              "repos_url": "https://api.github.com/users/300-iq/repos",
+              "avatar_url": "https://avatars.githubusercontent.com/u/69645454?v=4",
+              "events_url": "https://api.github.com/users/300-iq/events{/privacy}",
+              "site_admin": false,
+              "gravatar_id": "",
+              "starred_url": "https://api.github.com/users/300-iq/starred{/owner}{/repo}",
+              "followers_url": "https://api.github.com/users/300-iq/followers",
+              "following_url": "https://api.github.com/users/300-iq/following{/other_user}",
+              "user_view_type": "public",
+              "organizations_url": "https://api.github.com/users/300-iq/orgs",
+              "subscriptions_url": "https://api.github.com/users/300-iq/subscriptions",
+              "received_events_url": "https://api.github.com/users/300-iq/received_events"
+            },
+            "topics": [],
+            "git_url": "git://github.com/300-iq/regresslab-java-demo.git",
+            "license": null,
+            "node_id": "R_kgDOVID9RA",
+            "private": false,
+            "ssh_url": "git@github.com:300-iq/regresslab-java-demo.git",
+            "svn_url": "https://github.com/300-iq/regresslab-java-demo",
+            "archived": false,
+            "disabled": false,
+            "has_wiki": true,
+            "homepage": null,
+            "html_url": "https://github.com/300-iq/regresslab-java-demo",
+            "keys_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/keys{/key_id}",
+            "language": "Python",
+            "tags_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/tags",
+            "watchers": 0,
+            "blobs_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs{/sha}",
+            "clone_url": "https://github.com/300-iq/regresslab-java-demo.git",
+            "forks_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/forks",
+            "full_name": "300-iq/regresslab-java-demo",
+            "has_pages": false,
+            "hooks_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/hooks",
+            "pulls_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/pulls{/number}",
+            "pushed_at": "2026-10-13T18:46:43Z",
+            "teams_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/teams",
+            "trees_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees{/sha}",
+            "created_at": "2026-10-13T18:40:14Z",
+            "events_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/events",
+            "has_issues": true,
+            "issues_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues{/number}",
+            "labels_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/labels{/name}",
+            "merges_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/merges",
+            "mirror_url": null,
+            "updated_at": "2026-10-13T18:46:41Z",
+            "visibility": "public",
+            "archive_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/{archive_format}{/ref}",
+            "commits_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/commits{/sha}",
+            "compare_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/compare/{base}...{head}",
+            "description": "Real Java/JMH benchmark measurements for RegressLab: a public event-aggregation performance investigation.",
+            "forks_count": 0,
+            "is_template": false,
+            "open_issues": 1,
+            "branches_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/branches{/branch}",
+            "comments_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/comments{/number}",
+            "contents_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/contents/{+path}",
+            "git_refs_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/refs{/sha}",
+            "git_tags_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/tags{/sha}",
+            "has_projects": true,
+            "releases_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/releases{/id}",
+            "statuses_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/statuses/{sha}",
+            "allow_forking": true,
+            "assignees_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/assignees{/user}",
+            "downloads_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/downloads",
+            "languages_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/languages",
+            "default_branch": "main",
+            "milestones_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/milestones{/number}",
+            "stargazers_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/stargazers",
+            "watchers_count": 0,
+            "deployments_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/deployments",
+            "git_commits_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/commits{/sha}",
+            "has_discussions": false,
+            "subscribers_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/subscribers",
+            "contributors_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/contributors",
+            "issue_events_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues/events{/number}",
+            "stargazers_count": 0,
+            "subscription_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/subscription",
+            "collaborators_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/collaborators{/collaborator}",
+            "has_pull_requests": true,
+            "issue_comment_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues/comments{/number}",
+            "notifications_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/notifications{?since,all,participating}",
+            "open_issues_count": 1,
+            "web_commit_signoff_required": false,
+            "pull_request_creation_policy": "all"
+          },
+          "user": {
+            "id": 69645454,
+            "url": "https://api.github.com/users/300-iq",
+            "type": "User",
+            "login": "300-iq",
+            "node_id": "MDQ6VXNlcjY5NjQ1NDU0",
+            "html_url": "https://github.com/300-iq",
+            "gists_url": "https://api.github.com/users/300-iq/gists{/gist_id}",
+            "repos_url": "https://api.github.com/users/300-iq/repos",
+            "avatar_url": "https://avatars.githubusercontent.com/u/69645454?v=4",
+            "events_url": "https://api.github.com/users/300-iq/events{/privacy}",
+            "site_admin": false,
+            "gravatar_id": "",
+            "starred_url": "https://api.github.com/users/300-iq/starred{/owner}{/repo}",
+            "followers_url": "https://api.github.com/users/300-iq/followers",
+            "following_url": "https://api.github.com/users/300-iq/following{/other_user}",
+            "user_view_type": "public",
+            "organizations_url": "https://api.github.com/users/300-iq/orgs",
+            "subscriptions_url": "https://api.github.com/users/300-iq/subscriptions",
+            "received_events_url": "https://api.github.com/users/300-iq/received_events"
+          },
+          "label": "300-iq:demo/aggregate-on-read"
+        },
+        "user": {
+          "id": 69645454,
+          "url": "https://api.github.com/users/300-iq",
+          "type": "User",
+          "login": "300-iq",
+          "node_id": "MDQ6VXNlcjY5NjQ1NDU0",
+          "html_url": "https://github.com/300-iq",
+          "gists_url": "https://api.github.com/users/300-iq/gists{/gist_id}",
+          "repos_url": "https://api.github.com/users/300-iq/repos",
+          "avatar_url": "https://avatars.githubusercontent.com/u/69645454?v=4",
+          "events_url": "https://api.github.com/users/300-iq/events{/privacy}",
+          "site_admin": false,
+          "gravatar_id": "",
+          "starred_url": "https://api.github.com/users/300-iq/starred{/owner}{/repo}",
+          "followers_url": "https://api.github.com/users/300-iq/followers",
+          "following_url": "https://api.github.com/users/300-iq/following{/other_user}",
+          "user_view_type": "public",
+          "organizations_url": "https://api.github.com/users/300-iq/orgs",
+          "subscriptions_url": "https://api.github.com/users/300-iq/subscriptions",
+          "received_events_url": "https://api.github.com/users/300-iq/received_events"
+        },
+        "draft": false,
+        "state": "open",
+        "title": "Demonstrate aggregate-on-read event queries",
+        "_links": {
+          "html": {
+            "href": "https://github.com/300-iq/regresslab-java-demo/pull/1"
+          },
+          "self": {
+            "href": "https://api.github.com/repos/300-iq/regresslab-java-demo/pulls/1"
+          },
+          "issue": {
+            "href": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues/1"
+          },
+          "commits": {
+            "href": "https://api.github.com/repos/300-iq/regresslab-java-demo/pulls/1/commits"
+          },
+          "comments": {
+            "href": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues/1/comments"
+          },
+          "statuses": {
+            "href": "https://api.github.com/repos/300-iq/regresslab-java-demo/statuses/41e3ff909bdb246c563fbe4e1bfc13565778e864"
+          },
+          "review_comment": {
+            "href": "https://api.github.com/repos/300-iq/regresslab-java-demo/pulls/comments{/number}"
+          },
+          "review_comments": {
+            "href": "https://api.github.com/repos/300-iq/regresslab-java-demo/pulls/1/comments"
+          }
+        },
+        "labels": [],
+        "locked": false,
+        "merged": false,
+        "number": 1,
+        "commits": 1,
+        "node_id": "PR_kwDOVID9RM8AAAABIPUZGw",
+        "comments": 0,
+        "diff_url": "https://github.com/300-iq/regresslab-java-demo/pull/1.diff",
+        "html_url": "https://github.com/300-iq/regresslab-java-demo/pull/1",
+        "additions": 7,
+        "assignees": [],
+        "closed_at": null,
+        "deletions": 9,
+        "issue_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues/1",
+        "mergeable": true,
+        "merged_at": null,
+        "merged_by": null,
+        "milestone": null,
+        "patch_url": "https://github.com/300-iq/regresslab-java-demo/pull/1.patch",
+        "auto_merge": null,
+        "created_at": "2026-10-13T18:47:41Z",
+        "rebaseable": true,
+        "updated_at": "2026-10-13T18:47:41Z",
+        "commits_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/pulls/1/commits",
+        "comments_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/issues/1/comments",
+        "statuses_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/statuses/41e3ff909bdb246c563fbe4e1bfc13565778e864",
+        "changed_files": 1,
+        "mergeable_state": "clean",
+        "requested_teams": [],
+        "review_comments": 0,
+        "active_lock_reason": null,
+        "author_association": "OWNER",
+        "review_comment_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/pulls/comments{/number}",
+        "requested_reviewers": [],
+        "review_comments_url": "https://api.github.com/repos/300-iq/regresslab-java-demo/pulls/1/comments",
+        "maintainer_can_modify": false
+      },
+      "baselineTree": {
+        "sha": "7e1984754bfdd34e3a16ddd7f65e9ac20e77ddc2",
+        "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/7e1984754bfdd34e3a16ddd7f65e9ac20e77ddc2",
+        "tree": [
+          {
+            "sha": "0070b4e6c13d25215e0172a01f7ecd68ceb645e0",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/0070b4e6c13d25215e0172a01f7ecd68ceb645e0",
+            "mode": "040000",
+            "path": ".github",
+            "type": "tree"
+          },
+          {
+            "sha": "a9b08b181216949ccff7201cab7ff27c9e9a94a8",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/a9b08b181216949ccff7201cab7ff27c9e9a94a8",
+            "mode": "040000",
+            "path": ".github/workflows",
+            "type": "tree"
+          },
+          {
+            "sha": "0d9b49c70815c85668112908af4b3f47d585da3d",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs/0d9b49c70815c85668112908af4b3f47d585da3d",
+            "mode": "100644",
+            "path": ".github/workflows/benchmark.yml",
+            "size": 2263,
+            "type": "blob"
+          },
+          {
+            "sha": "61c1fcfaddb40a8c6b12eecad1e8a10b9c5109a6",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs/61c1fcfaddb40a8c6b12eecad1e8a10b9c5109a6",
+            "mode": "100644",
+            "path": ".gitignore",
+            "size": 38,
+            "type": "blob"
+          },
+          {
+            "sha": "fc4756fe8c9caee86c353a7bc5f7b60ee9a47b60",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs/fc4756fe8c9caee86c353a7bc5f7b60ee9a47b60",
+            "mode": "100644",
+            "path": "README.md",
+            "size": 2330,
+            "type": "blob"
+          },
+          {
+            "sha": "a9e3d4c0a744821d531b95303a704e2871605f03",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs/a9e3d4c0a744821d531b95303a704e2871605f03",
+            "mode": "100644",
+            "path": "pom.xml",
+            "size": 1872,
+            "type": "blob"
+          },
+          {
+            "sha": "34f5a14051867318404c219edd83f4f82d58c55d",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs/34f5a14051867318404c219edd83f4f82d58c55d",
+            "mode": "100644",
+            "path": "run_benchmarks.py",
+            "size": 11131,
+            "type": "blob"
+          },
+          {
+            "sha": "7e1fea73372362b30e65b7aec950774cf4affdbe",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/7e1fea73372362b30e65b7aec950774cf4affdbe",
+            "mode": "040000",
+            "path": "src",
+            "type": "tree"
+          },
+          {
+            "sha": "300e3123f28c73c094e9678a0f691da6da41daa7",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/300e3123f28c73c094e9678a0f691da6da41daa7",
+            "mode": "040000",
+            "path": "src/main",
+            "type": "tree"
+          },
+          {
+            "sha": "19c968eafff397e624613862e4315330c2a97dad",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/19c968eafff397e624613862e4315330c2a97dad",
+            "mode": "040000",
+            "path": "src/main/java",
+            "type": "tree"
+          },
+          {
+            "sha": "e0bfbd93af19399af1c9d4146410eddc3f7994fc",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/e0bfbd93af19399af1c9d4146410eddc3f7994fc",
+            "mode": "040000",
+            "path": "src/main/java/dev",
+            "type": "tree"
+          },
+          {
+            "sha": "a47d122e893037fea5479d00bc0af98ce09b0ba0",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/a47d122e893037fea5479d00bc0af98ce09b0ba0",
+            "mode": "040000",
+            "path": "src/main/java/dev/regresslab",
+            "type": "tree"
+          },
+          {
+            "sha": "79a4cd3e6ff904fd00395ce795f08c8fd3471115",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/79a4cd3e6ff904fd00395ce795f08c8fd3471115",
+            "mode": "040000",
+            "path": "src/main/java/dev/regresslab/demo",
+            "type": "tree"
+          },
+          {
+            "sha": "adf4cc770f63a63f392ea167e969dd5a9881fbe5",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs/adf4cc770f63a63f392ea167e969dd5a9881fbe5",
+            "mode": "100644",
+            "path": "src/main/java/dev/regresslab/demo/EventBenchmarks.java",
+            "size": 1091,
+            "type": "blob"
+          },
+          {
+            "sha": "9e42e6f356de263439df71ca264695a704994230",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs/9e42e6f356de263439df71ca264695a704994230",
+            "mode": "100644",
+            "path": "src/main/java/dev/regresslab/demo/EventStatistics.java",
+            "size": 611,
+            "type": "blob"
+          },
+          {
+            "sha": "e76cc9b57d53c1ae97d343d52a053872510674db",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/e76cc9b57d53c1ae97d343d52a053872510674db",
+            "mode": "040000",
+            "path": "src/test",
+            "type": "tree"
+          },
+          {
+            "sha": "be6beb272861a1c12598f5fe5bc295c146c54b74",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/be6beb272861a1c12598f5fe5bc295c146c54b74",
+            "mode": "040000",
+            "path": "src/test/java",
+            "type": "tree"
+          },
+          {
+            "sha": "b93e2df555f95024b42607ebe1c79abc596c227d",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/b93e2df555f95024b42607ebe1c79abc596c227d",
+            "mode": "040000",
+            "path": "src/test/java/dev",
+            "type": "tree"
+          },
+          {
+            "sha": "340622619a99aed10a19a8136f9004140fd58be6",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/340622619a99aed10a19a8136f9004140fd58be6",
+            "mode": "040000",
+            "path": "src/test/java/dev/regresslab",
+            "type": "tree"
+          },
+          {
+            "sha": "9079676682c9a4ce55e3ebba2976ac202b37563f",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/9079676682c9a4ce55e3ebba2976ac202b37563f",
+            "mode": "040000",
+            "path": "src/test/java/dev/regresslab/demo",
+            "type": "tree"
+          },
+          {
+            "sha": "9f9eeb1c6c532b7d8bea9fe94c55096cd42d4cd6",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs/9f9eeb1c6c532b7d8bea9fe94c55096cd42d4cd6",
+            "mode": "100644",
+            "path": "src/test/java/dev/regresslab/demo/EventStatisticsTest.java",
+            "size": 587,
+            "type": "blob"
+          },
+          {
+            "sha": "e962cf1cead1b6ae6b08c1c7a14b686a856d5d7f",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs/e962cf1cead1b6ae6b08c1c7a14b686a856d5d7f",
+            "mode": "100644",
+            "path": "test_producer.py",
+            "size": 4101,
+            "type": "blob"
+          }
+        ],
+        "truncated": false
+      },
+      "candidateTree": {
+        "sha": "0a1e656fd3296c7278c76c8b5cfd3dfdc225d44d",
+        "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/0a1e656fd3296c7278c76c8b5cfd3dfdc225d44d",
+        "tree": [
+          {
+            "sha": "0070b4e6c13d25215e0172a01f7ecd68ceb645e0",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/0070b4e6c13d25215e0172a01f7ecd68ceb645e0",
+            "mode": "040000",
+            "path": ".github",
+            "type": "tree"
+          },
+          {
+            "sha": "a9b08b181216949ccff7201cab7ff27c9e9a94a8",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/a9b08b181216949ccff7201cab7ff27c9e9a94a8",
+            "mode": "040000",
+            "path": ".github/workflows",
+            "type": "tree"
+          },
+          {
+            "sha": "0d9b49c70815c85668112908af4b3f47d585da3d",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs/0d9b49c70815c85668112908af4b3f47d585da3d",
+            "mode": "100644",
+            "path": ".github/workflows/benchmark.yml",
+            "size": 2263,
+            "type": "blob"
+          },
+          {
+            "sha": "61c1fcfaddb40a8c6b12eecad1e8a10b9c5109a6",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs/61c1fcfaddb40a8c6b12eecad1e8a10b9c5109a6",
+            "mode": "100644",
+            "path": ".gitignore",
+            "size": 38,
+            "type": "blob"
+          },
+          {
+            "sha": "fc4756fe8c9caee86c353a7bc5f7b60ee9a47b60",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs/fc4756fe8c9caee86c353a7bc5f7b60ee9a47b60",
+            "mode": "100644",
+            "path": "README.md",
+            "size": 2330,
+            "type": "blob"
+          },
+          {
+            "sha": "a9e3d4c0a744821d531b95303a704e2871605f03",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs/a9e3d4c0a744821d531b95303a704e2871605f03",
+            "mode": "100644",
+            "path": "pom.xml",
+            "size": 1872,
+            "type": "blob"
+          },
+          {
+            "sha": "34f5a14051867318404c219edd83f4f82d58c55d",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs/34f5a14051867318404c219edd83f4f82d58c55d",
+            "mode": "100644",
+            "path": "run_benchmarks.py",
+            "size": 11131,
+            "type": "blob"
+          },
+          {
+            "sha": "78a052268a01230f5da5bd8b14d1581c94eb04cb",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/78a052268a01230f5da5bd8b14d1581c94eb04cb",
+            "mode": "040000",
+            "path": "src",
+            "type": "tree"
+          },
+          {
+            "sha": "ba8dc7fd12ca68482abdd6822134fcaccbc2365b",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/ba8dc7fd12ca68482abdd6822134fcaccbc2365b",
+            "mode": "040000",
+            "path": "src/main",
+            "type": "tree"
+          },
+          {
+            "sha": "617cf06808fbf6df3d2f9a5a8c75c1e4caf84d7b",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/617cf06808fbf6df3d2f9a5a8c75c1e4caf84d7b",
+            "mode": "040000",
+            "path": "src/main/java",
+            "type": "tree"
+          },
+          {
+            "sha": "d7c24b903f4e4fe0d530d044784c0e38f14c9e9f",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/d7c24b903f4e4fe0d530d044784c0e38f14c9e9f",
+            "mode": "040000",
+            "path": "src/main/java/dev",
+            "type": "tree"
+          },
+          {
+            "sha": "e5595ed11a7100104191d85d7b4ea8f54382c52a",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/e5595ed11a7100104191d85d7b4ea8f54382c52a",
+            "mode": "040000",
+            "path": "src/main/java/dev/regresslab",
+            "type": "tree"
+          },
+          {
+            "sha": "3cccef8db13ff0b97db3771656045112511d3fde",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/3cccef8db13ff0b97db3771656045112511d3fde",
+            "mode": "040000",
+            "path": "src/main/java/dev/regresslab/demo",
+            "type": "tree"
+          },
+          {
+            "sha": "adf4cc770f63a63f392ea167e969dd5a9881fbe5",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs/adf4cc770f63a63f392ea167e969dd5a9881fbe5",
+            "mode": "100644",
+            "path": "src/main/java/dev/regresslab/demo/EventBenchmarks.java",
+            "size": 1091,
+            "type": "blob"
+          },
+          {
+            "sha": "a04a6d0fa480c8452a63df2da5882231764a8469",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs/a04a6d0fa480c8452a63df2da5882231764a8469",
+            "mode": "100644",
+            "path": "src/main/java/dev/regresslab/demo/EventStatistics.java",
+            "size": 550,
+            "type": "blob"
+          },
+          {
+            "sha": "e76cc9b57d53c1ae97d343d52a053872510674db",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/e76cc9b57d53c1ae97d343d52a053872510674db",
+            "mode": "040000",
+            "path": "src/test",
+            "type": "tree"
+          },
+          {
+            "sha": "be6beb272861a1c12598f5fe5bc295c146c54b74",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/be6beb272861a1c12598f5fe5bc295c146c54b74",
+            "mode": "040000",
+            "path": "src/test/java",
+            "type": "tree"
+          },
+          {
+            "sha": "b93e2df555f95024b42607ebe1c79abc596c227d",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/b93e2df555f95024b42607ebe1c79abc596c227d",
+            "mode": "040000",
+            "path": "src/test/java/dev",
+            "type": "tree"
+          },
+          {
+            "sha": "340622619a99aed10a19a8136f9004140fd58be6",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/340622619a99aed10a19a8136f9004140fd58be6",
+            "mode": "040000",
+            "path": "src/test/java/dev/regresslab",
+            "type": "tree"
+          },
+          {
+            "sha": "9079676682c9a4ce55e3ebba2976ac202b37563f",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/trees/9079676682c9a4ce55e3ebba2976ac202b37563f",
+            "mode": "040000",
+            "path": "src/test/java/dev/regresslab/demo",
+            "type": "tree"
+          },
+          {
+            "sha": "9f9eeb1c6c532b7d8bea9fe94c55096cd42d4cd6",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs/9f9eeb1c6c532b7d8bea9fe94c55096cd42d4cd6",
+            "mode": "100644",
+            "path": "src/test/java/dev/regresslab/demo/EventStatisticsTest.java",
+            "size": 587,
+            "type": "blob"
+          },
+          {
+            "sha": "e962cf1cead1b6ae6b08c1c7a14b686a856d5d7f",
+            "url": "https://api.github.com/repos/300-iq/regresslab-java-demo/git/blobs/e962cf1cead1b6ae6b08c1c7a14b686a856d5d7f",
+            "mode": "100644",
+            "path": "test_producer.py",
+            "size": 4101,
+            "type": "blob"
+          }
+        ],
+        "truncated": false
+      },
+      "githubApiVersion": "2026-03-10"
+    }
+  }
+}

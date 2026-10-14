@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 2,
+  "artifactId": "demo-map-lookup-baseline-v1",
+  "dataOrigin": "DEMO",
+  "repository": {
+    "githubId": 1,
+    "owner": "regresslab-demo",
+    "name": "java-benchmarks"
+  },
+  "pullRequest": {
+    "number": 42,
+    "title": "DEMO fixture: investigate a synthetic map lookup change",
+    "state": "OPEN",
+    "baselineSha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "candidateSha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "run": {
+    "workflowRunId": 42001,
+    "runAttempt": 1,
+    "commitSha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "branch": "main",
+    "measuredAt": "2026-10-13T12:00:00Z",
+    "status": "COMPLETE",
+    "environment": {
+      "runner": "DEMO synthetic runner",
+      "os": "Linux (synthetic)",
+      "architecture": "x86_64",
+      "cpu": "DEMO synthetic CPU",
+      "javaVersion": "21.0.9",
+      "jmhVersion": "1.37"
+    }
+  },
+  "benchmarks": [
+    {
+      "identifier": "dev.regresslab.MapLookup.v1",
+      "metricName": "average_time",
+      "unit": "ns/op",
+      "direction": "LOWER",
+      "parameters": {
+        "entries": "10000"
+      },
+      "configuration": {
+        "warmupIterations": 3,
+        "measurementIterations": 5,
+        "forkCount": 3,
+        "warmupTimeMs": 1000,
+        "measurementTimeMs": 1000,
+        "jvmArgs": [
+          "-Xms256m",
+          "-Xmx256m"
+        ]
+      },
+      "samples": [
+        {
+          "forkIndex": 0,
+          "iterationIndex": 0,
+          "value": 282
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 1,
+          "value": 286
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 2,
+          "value": 285
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 3,
+          "value": 287
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 4,
+          "value": 284
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 0,
+          "value": 287
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 1,
+          "value": 291
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 2,
+          "value": 290
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 3,
+          "value": 292
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 4,
+          "value": 289
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 0,
+          "value": 293
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 1,
+          "value": 297
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 2,
+          "value": 296
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 3,
+          "value": 298
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 4,
+          "value": 295
+        }
+      ]
+    },
+    {
+      "identifier": "dev.regresslab.JsonEncode.v1",
+      "metricName": "throughput",
+      "unit": "ops/s",
+      "direction": "HIGHER",
+      "parameters": {
+        "payloadBytes": "4096"
+      },
+      "configuration": {
+        "warmupIterations": 3,
+        "measurementIterations": 5,
+        "forkCount": 3,
+        "warmupTimeMs": 1000,
+        "measurementTimeMs": 1000,
+        "jvmArgs": [
+          "-Xms256m",
+          "-Xmx256m"
+        ]
+      },
+      "samples": [
+        {
+          "forkIndex": 0,
+          "iterationIndex": 0,
+          "value": 213800
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 1,
+          "value": 214400
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 2,
+          "value": 214250
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 3,
+          "value": 214550
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 4,
+          "value": 214100
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 0,
+          "value": 214550
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 1,
+          "value": 215150
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 2,
+          "value": 215000
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 3,
+          "value": 215300
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 4,
+          "value": 214850
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 0,
+          "value": 215450
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 1,
+          "value": 216050
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 2,
+          "value": 215900
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 3,
+          "value": 216200
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 4,
+          "value": 215750
+        }
+      ]
+    }
+  ]
+}

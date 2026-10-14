@@ -1,0 +1,383 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "artifactId",
+    "dataOrigin",
+    "repository",
+    "pullRequest",
+    "run",
+    "benchmarks"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 2
+    },
+    "artifactId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "dataOrigin": {
+      "enum": [
+        "REAL",
+        "DEMO"
+      ]
+    },
+    "repository": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "githubId",
+        "owner",
+        "name"
+      ],
+      "properties": {
+        "githubId": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "owner": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9-]{0,38}$"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_.-]{1,100}$"
+        }
+      }
+    },
+    "pullRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "number",
+        "title",
+        "state",
+        "baselineSha",
+        "candidateSha"
+      ],
+      "properties": {
+        "number": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "state": {
+          "enum": [
+            "OPEN",
+            "CLOSED",
+            "MERGED"
+          ]
+        },
+        "baselineSha": {
+          "$ref": "#/$defs/sha"
+        },
+        "candidateSha": {
+          "$ref": "#/$defs/sha"
+        }
+      }
+    },
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "workflowRunId",
+        "runAttempt",
+        "commitSha",
+        "branch",
+        "measuredAt",
+        "status",
+        "environment"
+      ],
+      "properties": {
+        "workflowRunId": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "runAttempt": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "commitSha": {
+          "$ref": "#/$defs/sha"
+        },
+        "branch": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "measuredAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "enum": [
+            "COMPLETE",
+            "FAILED"
+          ]
+        },
+        "environment": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "runner",
+            "os",
+            "architecture",
+            "cpu",
+            "javaVersion",
+            "jmhVersion"
+          ],
+          "properties": {
+            "runner": {
+              "$ref": "#/$defs/label"
+            },
+            "os": {
+              "$ref": "#/$defs/label"
+            },
+            "architecture": {
+              "enum": [
+                "x86_64",
+                "aarch64"
+              ]
+            },
+            "cpu": {
+              "$ref": "#/$defs/label"
+            },
+            "javaVersion": {
+              "type": "string",
+              "maxLength": 200,
+              "pattern": "^21(?:[.+_-].*)?$"
+            },
+            "jmhVersion": {
+              "const": "1.37"
+            }
+          }
+        }
+      }
+    },
+    "benchmarks": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "$ref": "#/$defs/case"
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://regresslab.dev/contracts/benchmark-run-artifact.v2.json",
+  "title": "RegressLab local Java/JMH run artifact v2",
+  "$defs": {
+    "sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "sample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "forkIndex",
+        "iterationIndex",
+        "value"
+      ],
+      "properties": {
+        "forkIndex": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9
+        },
+        "iterationIndex": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 29
+        },
+        "value": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1000000000000000
+        }
+      }
+    },
+    "case": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identifier",
+        "metricName",
+        "unit",
+        "direction",
+        "parameters",
+        "configuration",
+        "samples"
+      ],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.$-]+$"
+        },
+        "metricName": {
+          "enum": [
+            "average_time",
+            "throughput"
+          ]
+        },
+        "unit": {
+          "enum": [
+            "ns/op",
+            "ops/s"
+          ]
+        },
+        "direction": {
+          "enum": [
+            "LOWER",
+            "HIGHER"
+          ]
+        },
+        "parameters": {
+          "type": "object",
+          "maxProperties": 10,
+          "propertyNames": {
+            "pattern": "^[A-Za-z0-9_]{1,50}$"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "maxLength": 100
+          }
+        },
+        "configuration": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "warmupIterations",
+            "measurementIterations",
+            "forkCount",
+            "warmupTimeMs",
+            "measurementTimeMs",
+            "jvmArgs"
+          ],
+          "properties": {
+            "warmupIterations": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 30
+            },
+            "measurementIterations": {
+              "type": "integer",
+              "minimum": 5,
+              "maximum": 30
+            },
+            "forkCount": {
+              "type": "integer",
+              "minimum": 3,
+              "maximum": 10
+            },
+            "warmupTimeMs": {
+              "type": "integer",
+              "minimum": 100,
+              "maximum": 60000
+            },
+            "measurementTimeMs": {
+              "type": "integer",
+              "minimum": 100,
+              "maximum": 60000
+            },
+            "jvmArgs": {
+              "type": "array",
+              "maxItems": 32,
+              "items": {
+                "type": "string",
+                "maxLength": 200
+              }
+            }
+          }
+        },
+        "samples": {
+          "type": "array",
+          "minItems": 15,
+          "maxItems": 300,
+          "items": {
+            "$ref": "#/$defs/sample"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "metricName": {
+                "const": "average_time"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "const": "ns/op"
+              },
+              "direction": {
+                "const": "LOWER"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "unit": {
+                "const": "ops/s"
+              },
+              "direction": {
+                "const": "HIGHER"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "run": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "const": "COMPLETE"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "benchmarks": {
+            "type": "array",
+            "minItems": 1
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "benchmarks": {
+            "type": "array",
+            "maxItems": 0
+          }
+        }
+      }
+    }
+  ]
+}

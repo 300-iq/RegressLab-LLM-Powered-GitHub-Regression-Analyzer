@@ -1,0 +1,5 @@
+# Store portable text consistently while preserving Windows wrapper checkouts.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.jar binary
+*.png binary

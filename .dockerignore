@@ -1,0 +1,7 @@
+# The runtime image needs only its Dockerfile and host-built application JAR.
+*
+!backend/
+!backend/Dockerfile
+!backend/build/
+!backend/build/libs/
+!backend/build/libs/regresslab-api.jar

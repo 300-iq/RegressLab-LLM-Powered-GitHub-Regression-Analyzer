@@ -1,0 +1,133 @@
+{
+  "notice": "DEMO: synthetic development fixtures persisted through the protected local API. Not measured outcomes or verified GitHub resources.",
+  "repositoryId": "8409d7da-4dc6-4315-b8e1-e209bdf92c4f",
+  "pullRequestId": "e89196a7-fc17-4288-bfb5-74dd5c2baf10",
+  "baselineRunId": "2fed3f9e-b2ae-4d96-afaa-4dbaa9172006",
+  "candidateRunId": "de045dac-042a-42aa-b530-2a7f8f1cfaeb",
+  "overview": {
+    "repositories": 1,
+    "pullRequests": 1,
+    "comparisons": 4,
+    "observations": 60
+  },
+  "samplePage": {
+    "runId": "2fed3f9e-b2ae-4d96-afaa-4dbaa9172006",
+    "benchmarkCaseId": "e0465d02-28cb-43ed-8254-aa9bd1f3cbe3",
+    "unit": "ops/s",
+    "dataOrigin": "DEMO",
+    "samples": {
+      "items": [
+        {
+          "forkIndex": 0,
+          "iterationIndex": 0,
+          "value": 213800
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 1,
+          "value": 214400
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 2,
+          "value": 214250
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 3,
+          "value": 214550
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 4,
+          "value": 214100
+        }
+      ],
+      "page": 0,
+      "size": 5,
+      "totalElements": 15
+    }
+  },
+  "historyTotal": 2,
+  "persistedPullRequest": {
+    "id": "e89196a7-fc17-4288-bfb5-74dd5c2baf10",
+    "repositoryId": "8409d7da-4dc6-4315-b8e1-e209bdf92c4f",
+    "number": 42,
+    "title": "DEMO fixture: investigate a synthetic map lookup change",
+    "githubUrl": "https://github.com/regresslab-demo/java-benchmarks/pull/42",
+    "state": "OPEN",
+    "baselineSha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "candidateSha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "updatedAt": "2026-10-13T16:18:11.415670Z",
+    "dataOrigin": "DEMO",
+    "provenance": "LOCAL_UNVERIFIED"
+  },
+  "comparisons": [
+    {
+      "id": "e93f0a08-f2d4-4202-8dda-be5dc40b63c2",
+      "repositoryId": "8409d7da-4dc6-4315-b8e1-e209bdf92c4f",
+      "baselineRunId": "2fed3f9e-b2ae-4d96-afaa-4dbaa9172006",
+      "candidateRunId": "de045dac-042a-42aa-b530-2a7f8f1cfaeb",
+      "benchmarkCaseId": "e0465d02-28cb-43ed-8254-aa9bd1f3cbe3",
+      "analysisVersion": "fork-descriptive-v2",
+      "analysisStatus": "INSUFFICIENT_EVIDENCE",
+      "summary": {
+        "baselineForks": 3,
+        "candidateForks": 3,
+        "baselineSamples": 15,
+        "candidateSamples": 15,
+        "baselineMean": 215020,
+        "candidateMean": 198020,
+        "baselineMedian": 214970,
+        "candidateMedian": 197970,
+        "baselineStdDev": 826.1355820929153,
+        "candidateStdDev": 826.1355820929153,
+        "baselineCv": 0.003842133671718516,
+        "candidateCv": 0.004171980517588705,
+        "candidateBaselineRatio": 0.9209375872011906,
+        "degradationPercent": 7.906241279880943
+      },
+      "reasons": [
+        "LOCAL_PROVENANCE_UNVERIFIED",
+        "INFERENTIAL_ANALYSIS_NOT_IMPLEMENTED",
+        "FEWER_THAN_10_INDEPENDENT_FORKS"
+      ],
+      "dataOrigin": "DEMO",
+      "provenance": "LOCAL_UNVERIFIED",
+      "createdAt": "2026-10-13T16:47:19.754601Z"
+    },
+    {
+      "id": "6cc20988-455b-4e4c-9db0-716e255b1699",
+      "repositoryId": "8409d7da-4dc6-4315-b8e1-e209bdf92c4f",
+      "baselineRunId": "2fed3f9e-b2ae-4d96-afaa-4dbaa9172006",
+      "candidateRunId": "de045dac-042a-42aa-b530-2a7f8f1cfaeb",
+      "benchmarkCaseId": "9dd66535-faa5-4bc6-a1b9-4b712a88034e",
+      "analysisVersion": "fork-descriptive-v2",
+      "analysisStatus": "INSUFFICIENT_EVIDENCE",
+      "summary": {
+        "baselineForks": 3,
+        "candidateForks": 3,
+        "baselineSamples": 15,
+        "candidateSamples": 15,
+        "baselineMean": 290.1333333333334,
+        "candidateMean": 343.1333333333334,
+        "baselineMedian": 289.8,
+        "candidateMedian": 342.8,
+        "baselineStdDev": 5.507570547286102,
+        "candidateStdDev": 5.507570547286102,
+        "baselineCv": 0.018982894809120292,
+        "candidateCv": 0.016050817604292115,
+        "candidateBaselineRatio": 1.1826746323529411,
+        "degradationPercent": 18.267463235294112
+      },
+      "reasons": [
+        "LOCAL_PROVENANCE_UNVERIFIED",
+        "INFERENTIAL_ANALYSIS_NOT_IMPLEMENTED",
+        "FEWER_THAN_10_INDEPENDENT_FORKS"
+      ],
+      "dataOrigin": "DEMO",
+      "provenance": "LOCAL_UNVERIFIED",
+      "createdAt": "2026-10-13T16:47:19.776250Z"
+    }
+  ]
+}

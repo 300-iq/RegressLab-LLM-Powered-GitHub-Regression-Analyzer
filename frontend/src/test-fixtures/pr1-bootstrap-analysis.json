@@ -1,0 +1,103 @@
+{
+  "id": "8e2cf24a-1661-452c-b992-6d6c670612bb",
+  "comparisonId": "1a211b46-76b3-43bb-a6cb-4ba8f051e5f9",
+  "analysisVersion": "fork-bootstrap-v2",
+  "policySha256": "7fcf65eeedf1e73e7c674f072383cc16024c0cc06fe25f06ec2fc620750e8f79",
+  "inputSha256": "2083b50ecfda09d4602471d2d7897d91e0611e2cbb84cf6ad27bb217d2d08b99",
+  "policy": {
+    "practicalThresholdPercent": 5,
+    "minimumForksPerArm": 10,
+    "minimumIterationsPerFork": 5,
+    "minimumDistinctForkMeans": 5,
+    "maximumForkCv": 0.2,
+    "resamples": 10000,
+    "seed": 20261013,
+    "familyConfidenceLevel": 0.95,
+    "familySize": 2
+  },
+  "result": {
+    "benchmarkIdentifier": "dev.regresslab.demo.EventBenchmarks.countByCategory",
+    "unit": "ns/op",
+    "direction": "LOWER",
+    "baseline": {
+      "unit": "ns/op",
+      "direction": "LOWER",
+      "rawMeasurements": {
+        "count": 15,
+        "mean": 3.5591114681601748,
+        "median": 3.538056704789404,
+        "standardDeviation": 0.056797517906724326,
+        "coefficientOfVariation": 0.01595834196676197
+      },
+      "forkMeans": {
+        "count": 3,
+        "mean": 3.559111468160175,
+        "median": 3.56678535905525,
+        "standardDeviation": 0.013834797958932577,
+        "coefficientOfVariation": 0.0038871493862158383
+      },
+      "orderedForkMeans": [
+        3.5431404721332824,
+        3.56678535905525,
+        3.567408573291993
+      ]
+    },
+    "candidate": {
+      "unit": "ns/op",
+      "direction": "LOWER",
+      "rawMeasurements": {
+        "count": 15,
+        "mean": 36233.550805821,
+        "median": 36753.07089155389,
+        "standardDeviation": 843.3150935684117,
+        "coefficientOfVariation": 0.023274425906746384
+      },
+      "forkMeans": {
+        "count": 3,
+        "mean": 36233.550805821,
+        "median": 36761.251009253734,
+        "standardDeviation": 959.7049462504713,
+        "coefficientOfVariation": 0.026486638071814162
+      },
+      "orderedForkMeans": [
+        36813.61003296077,
+        35125.791375248504,
+        36761.251009253734
+      ]
+    },
+    "relativeChangePercent": 1030554.9822496425,
+    "interval": {
+      "lowerPercent": 984530.4580367855,
+      "upperPercent": 1038910.7398365648,
+      "nominalConfidenceLevel": 0.975,
+      "method": "independent-arm-fork-percentile-bootstrap",
+      "statistic": "direction-adjusted-relative-median-of-fork-means-percent",
+      "resamplingUnit": "JVM_FORK_MEAN",
+      "quantileMethod": "linear-interpolation-type-7",
+      "resamples": 10000,
+      "seed": 20261013,
+      "exploratory": true
+    },
+    "classification": "INCONCLUSIVE",
+    "explanation": "The evidence cannot resolve a practical change. At least 10 JVM forks per arm are required for an indication. Too few distinct fork means are observed to support a stable interval. Any interval is conditional and must not override adequacy or noise warnings.",
+    "reasons": [
+      "TOO_FEW_FORKS",
+      "LOW_FORK_DIVERSITY"
+    ],
+    "environmentWarnings": [
+      "Recorded environments match; unrecorded runner contention and drift remain possible.",
+      "GitHub artifact origin is checked; measurements remain untrusted and independence is not attested."
+    ],
+    "limitations": [
+      "Iterations within a JVM fork are dependent. The bootstrap resamples whole fork means, not individual iterations.",
+      "The interval assumes exchangeable, independent forks within each arm and independent arms. Shared runner noise, drift and cross-fork dependence can violate these assumptions.",
+      "Matching environment metadata does not establish equivalent CPU contention, scheduling, thermal state or completed warmup convergence.",
+      "This is a percentile bootstrap with a nominal, not guaranteed, coverage level; small samples, quantization and unobserved noise can make it misleading.",
+      "Bonferroni adjustment covers the recorded run-pair case family only, subject to interval validity. Repeated PRs, reruns and post-hoc threshold selection are not controlled.",
+      "An indication is conditional evidence for this workload and runner, not proof of causation, measurement honesty or a universal performance change."
+    ]
+  },
+  "dataOrigin": "REAL",
+  "provenance": "GITHUB_METADATA",
+  "createdAt": "2026-10-13T21:33:44.441295Z"
+}

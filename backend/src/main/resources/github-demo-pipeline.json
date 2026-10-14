@@ -1,0 +1,13 @@
+{
+  "repositoryGithubId": 1417739588,
+  "repositoryFullName": "300-iq/regresslab-java-demo",
+  "workflowPath": ".github/workflows/benchmark.yml",
+  "harnessSha256": "1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9",
+  "files": {
+    ".github/workflows/benchmark.yml": "d92757a903e56f82b5386ba9a4851b52c1178e86",
+    "pom.xml": "a9e3d4c0a744821d531b95303a704e2871605f03",
+    "run_benchmarks.py": "3e2f0b4921927ca990b784f529dc86e175c747a5",
+    "src/main/java/dev/regresslab/demo/EventBenchmarks.java": "adf4cc770f63a63f392ea167e969dd5a9881fbe5",
+    "src/test/java/dev/regresslab/demo/EventStatisticsTest.java": "9f9eeb1c6c532b7d8bea9fe94c55096cd42d4cd6"
+  }
+}

@@ -1,0 +1,58 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.5.16'
+}
+
+group = 'dev.regresslab'
+version = '0.1.0'
+
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(21) }
+}
+
+repositories { mavenCentral() }
+
+dependencies {
+    implementation platform('org.springframework.boot:spring-boot-dependencies:3.5.16')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.flywaydb:flyway-core'
+    implementation 'org.flywaydb:flyway-database-postgresql'
+    runtimeOnly 'org.postgresql:postgresql'
+    testImplementation platform('org.springframework.boot:spring-boot-dependencies:3.5.16')
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.zonky.test:embedded-postgres:2.2.2'
+    testImplementation enforcedPlatform('io.zonky.test.postgres:embedded-postgres-binaries-bom:17.9.0')
+    testRuntimeOnly 'io.zonky.test.postgres:embedded-postgres-binaries-darwin-arm64v8:17.9.0'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+    testLogging { events 'failed', 'skipped'; exceptionFormat = 'full' }
+}
+
+tasks.named('bootJar') { archiveFileName = 'regresslab-api.jar' }
+dependencyLocking { lockAllConfigurations() }
+
+
+// Trusted, opt-in offline evaluation only. Not packaged in the API or exposed by a controller.
+sourceSets {
+    evaluation {
+        java.srcDir '../evaluation/src/main/java'
+        compileClasspath = sourceSets.main.output + configurations.testCompileClasspath
+        runtimeClasspath = output + sourceSets.main.output + configurations.testRuntimeClasspath
+    }
+}
+tasks.register('evaluateInvestigator', JavaExec) {
+    dependsOn evaluationClasses
+    classpath = sourceSets.evaluation.runtimeClasspath
+    mainClass = 'dev.regresslab.ai.InvestigatorEvaluation'
+    if (project.hasProperty('evaluationDir')) args project.property('evaluationDir')
+}
+
+// Evaluation transport unit tests compile separately; these classes still stay out of bootJar.
+sourceSets.test.compileClasspath += sourceSets.evaluation.output
+sourceSets.test.runtimeClasspath += sourceSets.evaluation.output

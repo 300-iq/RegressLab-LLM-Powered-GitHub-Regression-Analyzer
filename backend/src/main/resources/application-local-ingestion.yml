@@ -1,0 +1,10 @@
+regresslab:
+  local-ingestion:
+    enabled: true
+    token: ${REGRESSLAB_INGESTION_TOKEN:}
+    repository-github-id: ${REGRESSLAB_REPOSITORY_GITHUB_ID:0}
+    repository-full-name: ${REGRESSLAB_REPOSITORY_FULL_NAME:}
+  github-import:
+    enabled: ${REGRESSLAB_GITHUB_IMPORT_ENABLED:false}
+    pipeline: ${REGRESSLAB_GITHUB_PIPELINE:classpath:github-demo-pipeline.json}
+    read-token: ${REGRESSLAB_GITHUB_READ_TOKEN:}

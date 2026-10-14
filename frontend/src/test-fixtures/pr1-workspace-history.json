@@ -1,0 +1,1858 @@
+{
+  "capturedAt": "2026-10-14T15:07:13.449Z",
+  "notice": "Actual persisted REAL records read from the local API; never a production fallback.",
+  "overview": {
+    "repositories": 1,
+    "pullRequests": 1,
+    "comparisons": 4,
+    "observations": 120
+  },
+  "repository": {
+    "id": "19af7456-7466-490d-8802-45c45fde6cbc",
+    "fullName": "300-iq/regresslab-java-demo",
+    "githubUrl": "https://github.com/300-iq/regresslab-java-demo",
+    "owner": "300-iq",
+    "name": "regresslab-java-demo",
+    "dataOrigin": "REAL",
+    "provenance": "GITHUB_METADATA"
+  },
+  "detail": {
+    "pullRequest": {
+      "id": "02d0afdb-375e-4d70-ad5d-7a78e5a497a7",
+      "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+      "number": 1,
+      "title": "Demonstrate aggregate-on-read event queries",
+      "githubUrl": "https://github.com/300-iq/regresslab-java-demo/pull/1",
+      "state": "OPEN",
+      "baselineSha": "55a1c4030211cff11169f26cf75e0771e58efaf1",
+      "candidateSha": "1bab51dcbfc203d1d8ffc2a41f144c9fa738ba8f",
+      "updatedAt": "2026-10-13T20:56:23.100176Z",
+      "dataOrigin": "REAL",
+      "provenance": "GITHUB_METADATA"
+    },
+    "runs": {
+      "items": [
+        {
+          "id": "3e101242-fafd-4561-9ef7-f87a860722a5",
+          "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+          "pullRequestId": "02d0afdb-375e-4d70-ad5d-7a78e5a497a7",
+          "workflowRunId": 38466146476,
+          "runAttempt": 1,
+          "githubUrl": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38466146476",
+          "commitSha": "1bab51dcbfc203d1d8ffc2a41f144c9fa738ba8f",
+          "baselineSha": "55a1c4030211cff11169f26cf75e0771e58efaf1",
+          "candidateSha": "1bab51dcbfc203d1d8ffc2a41f144c9fa738ba8f",
+          "branch": "demo/aggregate-on-read",
+          "measuredAt": "2026-10-13T20:52:20.288811Z",
+          "environment": {
+            "os": "Linux 6.17.0-1022-azure",
+            "cpu": "AMD EPYC 7763 64-Core Processor",
+            "runner": "github-hosted:GitHub Actions 1000000009",
+            "jmhVersion": "1.37",
+            "javaVersion": "21.0.12.1",
+            "architecture": "x86_64"
+          },
+          "environmentSha256": "00bb7c6bbcb938e22c5807062e9da16c6a74804a84c470488ac38b007c6ee78e",
+          "status": "COMPLETE",
+          "dataOrigin": "REAL",
+          "provenance": "GITHUB_METADATA",
+          "artifactId": "ef5de3ad-edd2-456f-883f-27ae51ea02a8",
+          "artifactIdentifier": "github-38466146476-1-candidate",
+          "artifactSha256": "6de96539af7acda526959606d82d7cc08f67204106d1530e0c5b507f73a14036",
+          "importedAt": "2026-10-13T20:56:23.100176Z"
+        },
+        {
+          "id": "ead1061c-d479-45a8-ab04-487f95bfc317",
+          "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+          "pullRequestId": "02d0afdb-375e-4d70-ad5d-7a78e5a497a7",
+          "workflowRunId": 38466146476,
+          "runAttempt": 1,
+          "githubUrl": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38466146476",
+          "commitSha": "55a1c4030211cff11169f26cf75e0771e58efaf1",
+          "baselineSha": "55a1c4030211cff11169f26cf75e0771e58efaf1",
+          "candidateSha": "1bab51dcbfc203d1d8ffc2a41f144c9fa738ba8f",
+          "branch": "main",
+          "measuredAt": "2026-10-13T20:52:02.982718Z",
+          "environment": {
+            "os": "Linux 6.17.0-1022-azure",
+            "cpu": "AMD EPYC 7763 64-Core Processor",
+            "runner": "github-hosted:GitHub Actions 1000000009",
+            "jmhVersion": "1.37",
+            "javaVersion": "21.0.12.1",
+            "architecture": "x86_64"
+          },
+          "environmentSha256": "00bb7c6bbcb938e22c5807062e9da16c6a74804a84c470488ac38b007c6ee78e",
+          "status": "COMPLETE",
+          "dataOrigin": "REAL",
+          "provenance": "GITHUB_METADATA",
+          "artifactId": "1a065ece-6955-430a-a228-6b2a872f1b37",
+          "artifactIdentifier": "github-38466146476-1-baseline",
+          "artifactSha256": "4b274a81eef800e6b5dbeee7a1bb725069eb4fcaea7b8cca605b39a1a2ed9dfd",
+          "importedAt": "2026-10-13T20:56:23.100176Z"
+        },
+        {
+          "id": "a9e21fc7-0ed8-4bf6-879d-8cb42753cf83",
+          "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+          "pullRequestId": "02d0afdb-375e-4d70-ad5d-7a78e5a497a7",
+          "workflowRunId": 38449649490,
+          "runAttempt": 1,
+          "githubUrl": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38449649490",
+          "commitSha": "41e3ff909bdb246c563fbe4e1bfc13565778e864",
+          "baselineSha": "e6435b3967c06f9dd7d25f8e8f8c857d2ad28d25",
+          "candidateSha": "41e3ff909bdb246c563fbe4e1bfc13565778e864",
+          "branch": "demo/aggregate-on-read",
+          "measuredAt": "2026-10-13T18:48:31.311833Z",
+          "environment": {
+            "os": "Linux 6.17.0-1022-azure",
+            "cpu": "AMD EPYC 7763 64-Core Processor",
+            "runner": "github-hosted:GitHub Actions 1000000006",
+            "jmhVersion": "1.37",
+            "javaVersion": "21.0.12.1",
+            "architecture": "x86_64"
+          },
+          "environmentSha256": "d387ccb6998f77921060c6ea8d8fe8f20b6586ae2fc5b3972599773c5e2ad636",
+          "status": "COMPLETE",
+          "dataOrigin": "REAL",
+          "provenance": "GITHUB_METADATA",
+          "artifactId": "8530315f-01ce-43d0-a345-fd7911af2048",
+          "artifactIdentifier": "github-38449649490-1-candidate",
+          "artifactSha256": "c4842e2000c381462677a5c066324dcb977b57f5e7fe0d63fdc43db384b508a9",
+          "importedAt": "2026-10-13T19:19:00.275008Z"
+        },
+        {
+          "id": "586f7460-19ab-4f32-aaf9-e37f4a7d83ff",
+          "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+          "pullRequestId": "02d0afdb-375e-4d70-ad5d-7a78e5a497a7",
+          "workflowRunId": 38449649490,
+          "runAttempt": 1,
+          "githubUrl": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38449649490",
+          "commitSha": "e6435b3967c06f9dd7d25f8e8f8c857d2ad28d25",
+          "baselineSha": "e6435b3967c06f9dd7d25f8e8f8c857d2ad28d25",
+          "candidateSha": "41e3ff909bdb246c563fbe4e1bfc13565778e864",
+          "branch": "main",
+          "measuredAt": "2026-10-13T18:48:14.312511Z",
+          "environment": {
+            "os": "Linux 6.17.0-1022-azure",
+            "cpu": "AMD EPYC 7763 64-Core Processor",
+            "runner": "github-hosted:GitHub Actions 1000000006",
+            "jmhVersion": "1.37",
+            "javaVersion": "21.0.12.1",
+            "architecture": "x86_64"
+          },
+          "environmentSha256": "d387ccb6998f77921060c6ea8d8fe8f20b6586ae2fc5b3972599773c5e2ad636",
+          "status": "COMPLETE",
+          "dataOrigin": "REAL",
+          "provenance": "GITHUB_METADATA",
+          "artifactId": "e33eeb45-08b4-4679-b1dd-11f170c0dc1a",
+          "artifactIdentifier": "github-38449649490-1-baseline",
+          "artifactSha256": "8f698e69171af2ba50a409db7136ad3f6b85bd25cbcd2388da20c0a36adbf4a9",
+          "importedAt": "2026-10-13T19:19:00.275008Z"
+        }
+      ],
+      "page": 0,
+      "size": 20,
+      "totalElements": 4
+    },
+    "comparisons": {
+      "items": [
+        {
+          "id": "15374907-06e8-43c1-a886-5cb8d16450bc",
+          "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+          "baselineRunId": "ead1061c-d479-45a8-ab04-487f95bfc317",
+          "candidateRunId": "3e101242-fafd-4561-9ef7-f87a860722a5",
+          "benchmarkCaseId": "dc83aee3-b567-4ebc-bbb0-aed44377e2b1",
+          "analysisVersion": "fork-descriptive-v2",
+          "analysisStatus": "INSUFFICIENT_EVIDENCE",
+          "summary": {
+            "baselineForks": 3,
+            "candidateForks": 3,
+            "baselineSamples": 15,
+            "candidateSamples": 15,
+            "baselineMean": 0.9397740924736517,
+            "candidateMean": 104977.80953280469,
+            "baselineMedian": 0.9469010912507478,
+            "candidateMedian": 107650.2450008763,
+            "baselineStdDev": 0.013921997987985648,
+            "candidateStdDev": 4825.250415787617,
+            "baselineCv": 0.014814196411118852,
+            "candidateCv": 0.045964479895913304,
+            "candidateBaselineRatio": 111705.36661261274,
+            "degradationPercent": 11170436.661261274
+          },
+          "reasons": [
+            "ARTIFACT_MEASUREMENTS_UNTRUSTED",
+            "INFERENTIAL_ANALYSIS_NOT_IMPLEMENTED",
+            "FEWER_THAN_10_INDEPENDENT_FORKS"
+          ],
+          "dataOrigin": "REAL",
+          "provenance": "GITHUB_METADATA",
+          "createdAt": "2026-10-13T20:56:23.196179Z"
+        },
+        {
+          "id": "1a211b46-76b3-43bb-a6cb-4ba8f051e5f9",
+          "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+          "baselineRunId": "ead1061c-d479-45a8-ab04-487f95bfc317",
+          "candidateRunId": "3e101242-fafd-4561-9ef7-f87a860722a5",
+          "benchmarkCaseId": "deeda7b9-51aa-49dd-a283-5a37236eb062",
+          "analysisVersion": "fork-descriptive-v2",
+          "analysisStatus": "INSUFFICIENT_EVIDENCE",
+          "summary": {
+            "baselineForks": 3,
+            "candidateForks": 3,
+            "baselineSamples": 15,
+            "candidateSamples": 15,
+            "baselineMean": 3.559111468160175,
+            "candidateMean": 36233.550805821,
+            "baselineMedian": 3.56678535905525,
+            "candidateMedian": 36761.251009253734,
+            "baselineStdDev": 0.013834797958932577,
+            "candidateStdDev": 959.7049462504713,
+            "baselineCv": 0.0038871493862158383,
+            "candidateCv": 0.026486638071814162,
+            "candidateBaselineRatio": 10180.504637173206,
+            "degradationPercent": 1017950.4637173206
+          },
+          "reasons": [
+            "ARTIFACT_MEASUREMENTS_UNTRUSTED",
+            "INFERENTIAL_ANALYSIS_NOT_IMPLEMENTED",
+            "FEWER_THAN_10_INDEPENDENT_FORKS"
+          ],
+          "dataOrigin": "REAL",
+          "provenance": "GITHUB_METADATA",
+          "createdAt": "2026-10-13T20:56:23.174254Z"
+        },
+        {
+          "id": "49f07fa8-60be-4ba3-83a9-e3377070bb6b",
+          "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+          "baselineRunId": "586f7460-19ab-4f32-aaf9-e37f4a7d83ff",
+          "candidateRunId": "a9e21fc7-0ed8-4bf6-879d-8cb42753cf83",
+          "benchmarkCaseId": "dc83aee3-b567-4ebc-bbb0-aed44377e2b1",
+          "analysisVersion": "fork-descriptive-v2",
+          "analysisStatus": "INSUFFICIENT_EVIDENCE",
+          "summary": {
+            "baselineForks": 3,
+            "candidateForks": 3,
+            "baselineSamples": 15,
+            "candidateSamples": 15,
+            "baselineMean": 0.9344645103212658,
+            "candidateMean": 103925.53039362592,
+            "baselineMedian": 0.9264512115585477,
+            "candidateMedian": 105256.18808352653,
+            "baselineStdDev": 0.015745076388388134,
+            "candidateStdDev": 5081.97723834081,
+            "baselineCv": 0.016849303761118792,
+            "candidateCv": 0.048900180918898674,
+            "candidateBaselineRatio": 111213.99394600515,
+            "degradationPercent": 11121299.394600516
+          },
+          "reasons": [
+            "ARTIFACT_MEASUREMENTS_UNTRUSTED",
+            "INFERENTIAL_ANALYSIS_NOT_IMPLEMENTED",
+            "FEWER_THAN_10_INDEPENDENT_FORKS"
+          ],
+          "dataOrigin": "REAL",
+          "provenance": "GITHUB_METADATA",
+          "createdAt": "2026-10-13T19:19:00.373844Z"
+        },
+        {
+          "id": "ad9444b3-a45c-4321-92c8-8ed050be992e",
+          "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+          "baselineRunId": "586f7460-19ab-4f32-aaf9-e37f4a7d83ff",
+          "candidateRunId": "a9e21fc7-0ed8-4bf6-879d-8cb42753cf83",
+          "benchmarkCaseId": "deeda7b9-51aa-49dd-a283-5a37236eb062",
+          "analysisVersion": "fork-descriptive-v2",
+          "analysisStatus": "INSUFFICIENT_EVIDENCE",
+          "summary": {
+            "baselineForks": 3,
+            "candidateForks": 3,
+            "baselineSamples": 15,
+            "candidateSamples": 15,
+            "baselineMean": 3.5609865991820175,
+            "candidateMean": 36949.92671985723,
+            "baselineMedian": 3.555361734541787,
+            "candidateMedian": 36961.187942374796,
+            "baselineStdDev": 0.02791071408031386,
+            "candidateStdDev": 122.11264741036719,
+            "baselineCv": 0.007837916067059938,
+            "candidateCv": 0.0033048143325475864,
+            "candidateBaselineRatio": 10376.317262284803,
+            "degradationPercent": 1037531.7262284803
+          },
+          "reasons": [
+            "ARTIFACT_MEASUREMENTS_UNTRUSTED",
+            "INFERENTIAL_ANALYSIS_NOT_IMPLEMENTED",
+            "FEWER_THAN_10_INDEPENDENT_FORKS"
+          ],
+          "dataOrigin": "REAL",
+          "provenance": "GITHUB_METADATA",
+          "createdAt": "2026-10-13T19:19:00.353893Z"
+        }
+      ],
+      "page": 0,
+      "size": 20,
+      "totalElements": 4
+    }
+  },
+  "analyses": [
+    {
+      "items": [
+        {
+          "id": "bdc9ddb1-3670-46fd-abb0-a2f65e43a976",
+          "comparisonId": "15374907-06e8-43c1-a886-5cb8d16450bc",
+          "analysisVersion": "fork-bootstrap-v2",
+          "policySha256": "7fcf65eeedf1e73e7c674f072383cc16024c0cc06fe25f06ec2fc620750e8f79",
+          "inputSha256": "64bb8e7a37db93ead4868091f01fd3a9f4f16e7a867d42414404b05881a3e192",
+          "policy": {
+            "practicalThresholdPercent": 5,
+            "minimumForksPerArm": 10,
+            "minimumIterationsPerFork": 5,
+            "minimumDistinctForkMeans": 5,
+            "maximumForkCv": 0.2,
+            "resamples": 10000,
+            "seed": 20261013,
+            "familyConfidenceLevel": 0.95,
+            "familySize": 2
+          },
+          "result": {
+            "benchmarkIdentifier": "dev.regresslab.demo.EventBenchmarks.distinctCategories",
+            "unit": "ns/op",
+            "direction": "LOWER",
+            "baseline": {
+              "unit": "ns/op",
+              "direction": "LOWER",
+              "rawMeasurements": {
+                "count": 15,
+                "mean": 0.9397740924736517,
+                "median": 0.9408415293673615,
+                "standardDeviation": 0.014640643452073117,
+                "coefficientOfVariation": 0.015578896640506818
+              },
+              "forkMeans": {
+                "count": 3,
+                "mean": 0.9397740924736517,
+                "median": 0.9469010912507478,
+                "standardDeviation": 0.013921997987985648,
+                "coefficientOfVariation": 0.014814196411118852
+              },
+              "orderedForkMeans": [
+                0.9469010912507478,
+                0.9486896332846115,
+                0.923731552885596
+              ]
+            },
+            "candidate": {
+              "unit": "ns/op",
+              "direction": "LOWER",
+              "rawMeasurements": {
+                "count": 15,
+                "mean": 104977.80953280468,
+                "median": 106601.33955025046,
+                "standardDeviation": 4390.19169625718,
+                "coefficientOfVariation": 0.041820187673903435
+              },
+              "forkMeans": {
+                "count": 3,
+                "mean": 104977.80953280469,
+                "median": 107650.2450008763,
+                "standardDeviation": 4825.250415787617,
+                "coefficientOfVariation": 0.045964479895913304
+              },
+              "orderedForkMeans": [
+                107875.57433024007,
+                99407.60926729768,
+                107650.2450008763
+              ]
+            },
+            "relativeChangePercent": 11368589.50680822,
+            "interval": {
+              "lowerPercent": 10478312.093860723,
+              "upperPercent": 11678138.55245101,
+              "nominalConfidenceLevel": 0.975,
+              "method": "independent-arm-fork-percentile-bootstrap",
+              "statistic": "direction-adjusted-relative-median-of-fork-means-percent",
+              "resamplingUnit": "JVM_FORK_MEAN",
+              "quantileMethod": "linear-interpolation-type-7",
+              "resamples": 10000,
+              "seed": 20261013,
+              "exploratory": true
+            },
+            "classification": "INCONCLUSIVE",
+            "explanation": "The evidence cannot resolve a practical change. At least 10 JVM forks per arm are required for an indication. Too few distinct fork means are observed to support a stable interval. Any interval is conditional and must not override adequacy or noise warnings.",
+            "reasons": [
+              "TOO_FEW_FORKS",
+              "LOW_FORK_DIVERSITY"
+            ],
+            "environmentWarnings": [
+              "Recorded environments match; unrecorded runner contention and drift remain possible.",
+              "GitHub artifact origin is checked; measurements remain untrusted and independence is not attested."
+            ],
+            "limitations": [
+              "Iterations within a JVM fork are dependent. The bootstrap resamples whole fork means, not individual iterations.",
+              "The interval assumes exchangeable, independent forks within each arm and independent arms. Shared runner noise, drift and cross-fork dependence can violate these assumptions.",
+              "Matching environment metadata does not establish equivalent CPU contention, scheduling, thermal state or completed warmup convergence.",
+              "This is a percentile bootstrap with a nominal, not guaranteed, coverage level; small samples, quantization and unobserved noise can make it misleading.",
+              "Bonferroni adjustment covers the recorded run-pair case family only, subject to interval validity. Repeated PRs, reruns and post-hoc threshold selection are not controlled.",
+              "An indication is conditional evidence for this workload and runner, not proof of causation, measurement honesty or a universal performance change."
+            ]
+          },
+          "dataOrigin": "REAL",
+          "provenance": "GITHUB_METADATA",
+          "createdAt": "2026-10-13T21:33:44.514673Z"
+        },
+        {
+          "id": "ed26dfc6-d869-49dd-b0fd-e345941861ad",
+          "comparisonId": "15374907-06e8-43c1-a886-5cb8d16450bc",
+          "analysisVersion": "fork-bootstrap-v1",
+          "policySha256": "7fcf65eeedf1e73e7c674f072383cc16024c0cc06fe25f06ec2fc620750e8f79",
+          "inputSha256": "1c0c8acd956566ca4d358db178da3afefe73c190bb96613c81a51811598167a4",
+          "policy": {
+            "practicalThresholdPercent": 5,
+            "minimumForksPerArm": 10,
+            "minimumIterationsPerFork": 5,
+            "minimumDistinctForkMeans": 5,
+            "maximumForkCv": 0.2,
+            "resamples": 10000,
+            "seed": 20261013,
+            "familyConfidenceLevel": 0.95,
+            "familySize": 2
+          },
+          "result": {
+            "benchmarkIdentifier": "dev.regresslab.demo.EventBenchmarks.distinctCategories",
+            "unit": "ns/op",
+            "direction": "LOWER",
+            "baseline": {
+              "unit": "ns/op",
+              "direction": "LOWER",
+              "rawMeasurements": {
+                "count": 15,
+                "mean": 0.9397740924736517,
+                "median": 0.9408415293673615,
+                "standardDeviation": 0.014640643452073117,
+                "coefficientOfVariation": 0.015578896640506818
+              },
+              "forkMeans": {
+                "count": 3,
+                "mean": 0.9397740924736517,
+                "median": 0.9469010912507478,
+                "standardDeviation": 0.013921997987985648,
+                "coefficientOfVariation": 0.014814196411118852
+              },
+              "orderedForkMeans": [
+                0.9469010912507478,
+                0.9486896332846115,
+                0.923731552885596
+              ]
+            },
+            "candidate": {
+              "unit": "ns/op",
+              "direction": "LOWER",
+              "rawMeasurements": {
+                "count": 15,
+                "mean": 104977.80953280468,
+                "median": 106601.33955025046,
+                "standardDeviation": 4390.19169625718,
+                "coefficientOfVariation": 0.041820187673903435
+              },
+              "forkMeans": {
+                "count": 3,
+                "mean": 104977.80953280469,
+                "median": 107650.2450008763,
+                "standardDeviation": 4825.250415787617,
+                "coefficientOfVariation": 0.045964479895913304
+              },
+              "orderedForkMeans": [
+                107875.57433024007,
+                99407.60926729768,
+                107650.2450008763
+              ]
+            },
+            "relativeChangePercent": 11368589.50680822,
+            "interval": {
+              "lowerPercent": 10478312.093860723,
+              "upperPercent": 11678138.55245101,
+              "nominalConfidenceLevel": 0.975,
+              "method": "independent-arm-fork-percentile-bootstrap",
+              "statistic": "direction-adjusted-relative-median-of-fork-means-percent",
+              "resamplingUnit": "JVM_FORK_MEAN",
+              "quantileMethod": "linear-interpolation-type-7",
+              "resamples": 10000,
+              "seed": 20261013,
+              "exploratory": true
+            },
+            "classification": "INCONCLUSIVE",
+            "explanation": "The evidence cannot resolve a practical change. At least 10 JVM forks per arm are required for an indication. Too few distinct fork means are observed to support a stable interval. Any interval is conditional and must not override adequacy or noise warnings.",
+            "reasons": [
+              "TOO_FEW_FORKS",
+              "LOW_FORK_DIVERSITY"
+            ],
+            "environmentWarnings": [
+              "Recorded environments match; unrecorded runner contention and drift remain possible.",
+              "GitHub artifact origin is checked; measurements remain untrusted and independence is not attested."
+            ],
+            "limitations": [
+              "Iterations within a JVM fork are dependent. The bootstrap resamples whole fork means, not individual iterations.",
+              "The interval assumes exchangeable, independent forks within each arm and independent arms. Shared runner noise, drift and cross-fork dependence can violate these assumptions.",
+              "Matching environment metadata does not establish equivalent CPU contention, scheduling, thermal state or completed warmup convergence.",
+              "This is a percentile bootstrap with a nominal, not guaranteed, coverage level; small samples, quantization and unobserved noise can make it misleading.",
+              "Bonferroni adjustment covers the recorded run-pair case family only, subject to interval validity. Repeated PRs, reruns and post-hoc threshold selection are not controlled.",
+              "An indication is conditional evidence for this workload and runner, not proof of causation, measurement honesty or a universal performance change."
+            ]
+          },
+          "dataOrigin": "REAL",
+          "provenance": "GITHUB_METADATA",
+          "createdAt": "2026-10-13T21:13:00.401544Z"
+        }
+      ],
+      "page": 0,
+      "size": 20,
+      "totalElements": 2
+    },
+    {
+      "items": [
+        {
+          "id": "8e2cf24a-1661-452c-b992-6d6c670612bb",
+          "comparisonId": "1a211b46-76b3-43bb-a6cb-4ba8f051e5f9",
+          "analysisVersion": "fork-bootstrap-v2",
+          "policySha256": "7fcf65eeedf1e73e7c674f072383cc16024c0cc06fe25f06ec2fc620750e8f79",
+          "inputSha256": "2083b50ecfda09d4602471d2d7897d91e0611e2cbb84cf6ad27bb217d2d08b99",
+          "policy": {
+            "practicalThresholdPercent": 5,
+            "minimumForksPerArm": 10,
+            "minimumIterationsPerFork": 5,
+            "minimumDistinctForkMeans": 5,
+            "maximumForkCv": 0.2,
+            "resamples": 10000,
+            "seed": 20261013,
+            "familyConfidenceLevel": 0.95,
+            "familySize": 2
+          },
+          "result": {
+            "benchmarkIdentifier": "dev.regresslab.demo.EventBenchmarks.countByCategory",
+            "unit": "ns/op",
+            "direction": "LOWER",
+            "baseline": {
+              "unit": "ns/op",
+              "direction": "LOWER",
+              "rawMeasurements": {
+                "count": 15,
+                "mean": 3.5591114681601748,
+                "median": 3.538056704789404,
+                "standardDeviation": 0.056797517906724326,
+                "coefficientOfVariation": 0.01595834196676197
+              },
+              "forkMeans": {
+                "count": 3,
+                "mean": 3.559111468160175,
+                "median": 3.56678535905525,
+                "standardDeviation": 0.013834797958932577,
+                "coefficientOfVariation": 0.0038871493862158383
+              },
+              "orderedForkMeans": [
+                3.5431404721332824,
+                3.56678535905525,
+                3.567408573291993
+              ]
+            },
+            "candidate": {
+              "unit": "ns/op",
+              "direction": "LOWER",
+              "rawMeasurements": {
+                "count": 15,
+                "mean": 36233.550805821,
+                "median": 36753.07089155389,
+                "standardDeviation": 843.3150935684117,
+                "coefficientOfVariation": 0.023274425906746384
+              },
+              "forkMeans": {
+                "count": 3,
+                "mean": 36233.550805821,
+                "median": 36761.251009253734,
+                "standardDeviation": 959.7049462504713,
+                "coefficientOfVariation": 0.026486638071814162
+              },
+              "orderedForkMeans": [
+                36813.61003296077,
+                35125.791375248504,
+                36761.251009253734
+              ]
+            },
+            "relativeChangePercent": 1030554.9822496425,
+            "interval": {
+              "lowerPercent": 984530.4580367855,
+              "upperPercent": 1038910.7398365648,
+              "nominalConfidenceLevel": 0.975,
+              "method": "independent-arm-fork-percentile-bootstrap",
+              "statistic": "direction-adjusted-relative-median-of-fork-means-percent",
+              "resamplingUnit": "JVM_FORK_MEAN",
+              "quantileMethod": "linear-interpolation-type-7",
+              "resamples": 10000,
+              "seed": 20261013,
+              "exploratory": true
+            },
+            "classification": "INCONCLUSIVE",
+            "explanation": "The evidence cannot resolve a practical change. At least 10 JVM forks per arm are required for an indication. Too few distinct fork means are observed to support a stable interval. Any interval is conditional and must not override adequacy or noise warnings.",
+            "reasons": [
+              "TOO_FEW_FORKS",
+              "LOW_FORK_DIVERSITY"
+            ],
+            "environmentWarnings": [
+              "Recorded environments match; unrecorded runner contention and drift remain possible.",
+              "GitHub artifact origin is checked; measurements remain untrusted and independence is not attested."
+            ],
+            "limitations": [
+              "Iterations within a JVM fork are dependent. The bootstrap resamples whole fork means, not individual iterations.",
+              "The interval assumes exchangeable, independent forks within each arm and independent arms. Shared runner noise, drift and cross-fork dependence can violate these assumptions.",
+              "Matching environment metadata does not establish equivalent CPU contention, scheduling, thermal state or completed warmup convergence.",
+              "This is a percentile bootstrap with a nominal, not guaranteed, coverage level; small samples, quantization and unobserved noise can make it misleading.",
+              "Bonferroni adjustment covers the recorded run-pair case family only, subject to interval validity. Repeated PRs, reruns and post-hoc threshold selection are not controlled.",
+              "An indication is conditional evidence for this workload and runner, not proof of causation, measurement honesty or a universal performance change."
+            ]
+          },
+          "dataOrigin": "REAL",
+          "provenance": "GITHUB_METADATA",
+          "createdAt": "2026-10-13T21:33:44.441295Z"
+        },
+        {
+          "id": "50b96324-564b-4f4e-9dd0-935a428af131",
+          "comparisonId": "1a211b46-76b3-43bb-a6cb-4ba8f051e5f9",
+          "analysisVersion": "fork-bootstrap-v1",
+          "policySha256": "7fcf65eeedf1e73e7c674f072383cc16024c0cc06fe25f06ec2fc620750e8f79",
+          "inputSha256": "6aff536fc1839cc7b2e48fe776dd78fa65e1e9e96639530a2e11c397dfb1de63",
+          "policy": {
+            "practicalThresholdPercent": 5,
+            "minimumForksPerArm": 10,
+            "minimumIterationsPerFork": 5,
+            "minimumDistinctForkMeans": 5,
+            "maximumForkCv": 0.2,
+            "resamples": 10000,
+            "seed": 20261013,
+            "familyConfidenceLevel": 0.95,
+            "familySize": 2
+          },
+          "result": {
+            "benchmarkIdentifier": "dev.regresslab.demo.EventBenchmarks.countByCategory",
+            "unit": "ns/op",
+            "direction": "LOWER",
+            "baseline": {
+              "unit": "ns/op",
+              "direction": "LOWER",
+              "rawMeasurements": {
+                "count": 15,
+                "mean": 3.5591114681601748,
+                "median": 3.538056704789404,
+                "standardDeviation": 0.056797517906724326,
+                "coefficientOfVariation": 0.01595834196676197
+              },
+              "forkMeans": {
+                "count": 3,
+                "mean": 3.559111468160175,
+                "median": 3.56678535905525,
+                "standardDeviation": 0.013834797958932577,
+                "coefficientOfVariation": 0.0038871493862158383
+              },
+              "orderedForkMeans": [
+                3.5431404721332824,
+                3.56678535905525,
+                3.567408573291993
+              ]
+            },
+            "candidate": {
+              "unit": "ns/op",
+              "direction": "LOWER",
+              "rawMeasurements": {
+                "count": 15,
+                "mean": 36233.550805821,
+                "median": 36753.07089155389,
+                "standardDeviation": 843.3150935684117,
+                "coefficientOfVariation": 0.023274425906746384
+              },
+              "forkMeans": {
+                "count": 3,
+                "mean": 36233.550805821,
+                "median": 36761.251009253734,
+                "standardDeviation": 959.7049462504713,
+                "coefficientOfVariation": 0.026486638071814162
+              },
+              "orderedForkMeans": [
+                36813.61003296077,
+                35125.791375248504,
+                36761.251009253734
+              ]
+            },
+            "relativeChangePercent": 1030554.9822496425,
+            "interval": {
+              "lowerPercent": 984530.4580367855,
+              "upperPercent": 1038910.7398365648,
+              "nominalConfidenceLevel": 0.975,
+              "method": "independent-arm-fork-percentile-bootstrap",
+              "statistic": "direction-adjusted-relative-median-of-fork-means-percent",
+              "resamplingUnit": "JVM_FORK_MEAN",
+              "quantileMethod": "linear-interpolation-type-7",
+              "resamples": 10000,
+              "seed": 20261013,
+              "exploratory": true
+            },
+            "classification": "INCONCLUSIVE",
+            "explanation": "The evidence cannot resolve a practical change. At least 10 JVM forks per arm are required for an indication. Too few distinct fork means are observed to support a stable interval. Any interval is conditional and must not override adequacy or noise warnings.",
+            "reasons": [
+              "TOO_FEW_FORKS",
+              "LOW_FORK_DIVERSITY"
+            ],
+            "environmentWarnings": [
+              "Recorded environments match; unrecorded runner contention and drift remain possible.",
+              "GitHub artifact origin is checked; measurements remain untrusted and independence is not attested."
+            ],
+            "limitations": [
+              "Iterations within a JVM fork are dependent. The bootstrap resamples whole fork means, not individual iterations.",
+              "The interval assumes exchangeable, independent forks within each arm and independent arms. Shared runner noise, drift and cross-fork dependence can violate these assumptions.",
+              "Matching environment metadata does not establish equivalent CPU contention, scheduling, thermal state or completed warmup convergence.",
+              "This is a percentile bootstrap with a nominal, not guaranteed, coverage level; small samples, quantization and unobserved noise can make it misleading.",
+              "Bonferroni adjustment covers the recorded run-pair case family only, subject to interval validity. Repeated PRs, reruns and post-hoc threshold selection are not controlled.",
+              "An indication is conditional evidence for this workload and runner, not proof of causation, measurement honesty or a universal performance change."
+            ]
+          },
+          "dataOrigin": "REAL",
+          "provenance": "GITHUB_METADATA",
+          "createdAt": "2026-10-13T21:13:00.316965Z"
+        }
+      ],
+      "page": 0,
+      "size": 20,
+      "totalElements": 2
+    },
+    {
+      "items": [],
+      "page": 0,
+      "size": 20,
+      "totalElements": 0
+    },
+    {
+      "items": [],
+      "page": 0,
+      "size": 20,
+      "totalElements": 0
+    }
+  ],
+  "histories": [
+    {
+      "items": [
+        {
+          "run": {
+            "id": "3e101242-fafd-4561-9ef7-f87a860722a5",
+            "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+            "pullRequestId": "02d0afdb-375e-4d70-ad5d-7a78e5a497a7",
+            "workflowRunId": 38466146476,
+            "runAttempt": 1,
+            "githubUrl": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38466146476",
+            "commitSha": "1bab51dcbfc203d1d8ffc2a41f144c9fa738ba8f",
+            "baselineSha": "55a1c4030211cff11169f26cf75e0771e58efaf1",
+            "candidateSha": "1bab51dcbfc203d1d8ffc2a41f144c9fa738ba8f",
+            "branch": "demo/aggregate-on-read",
+            "measuredAt": "2026-10-13T20:52:20.288811Z",
+            "environment": {
+              "os": "Linux 6.17.0-1022-azure",
+              "cpu": "AMD EPYC 7763 64-Core Processor",
+              "runner": "github-hosted:GitHub Actions 1000000009",
+              "jmhVersion": "1.37",
+              "javaVersion": "21.0.12.1",
+              "architecture": "x86_64"
+            },
+            "environmentSha256": "00bb7c6bbcb938e22c5807062e9da16c6a74804a84c470488ac38b007c6ee78e",
+            "status": "COMPLETE",
+            "dataOrigin": "REAL",
+            "provenance": "GITHUB_METADATA",
+            "artifactId": "ef5de3ad-edd2-456f-883f-27ae51ea02a8",
+            "artifactIdentifier": "github-38466146476-1-candidate",
+            "artifactSha256": "6de96539af7acda526959606d82d7cc08f67204106d1530e0c5b507f73a14036",
+            "importedAt": "2026-10-13T20:56:23.100176Z"
+          },
+          "parameters": {
+            "events": "10000"
+          },
+          "configuration": {
+            "jvmArgs": [
+              "-Xms256m",
+              "-Xmx256m",
+              "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+            ],
+            "forkCount": 3,
+            "warmupTimeMs": 1000,
+            "warmupIterations": 3,
+            "measurementTimeMs": 1000,
+            "measurementIterations": 5
+          },
+          "configurationSha256": "6c6372f61a2c60e9f2687d0eb74936a0a2550775d03c7b65de400cfe7cbd7d53",
+          "forks": 3,
+          "sampleCount": 15,
+          "mean": 104977.80953280469
+        },
+        {
+          "run": {
+            "id": "ead1061c-d479-45a8-ab04-487f95bfc317",
+            "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+            "pullRequestId": "02d0afdb-375e-4d70-ad5d-7a78e5a497a7",
+            "workflowRunId": 38466146476,
+            "runAttempt": 1,
+            "githubUrl": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38466146476",
+            "commitSha": "55a1c4030211cff11169f26cf75e0771e58efaf1",
+            "baselineSha": "55a1c4030211cff11169f26cf75e0771e58efaf1",
+            "candidateSha": "1bab51dcbfc203d1d8ffc2a41f144c9fa738ba8f",
+            "branch": "main",
+            "measuredAt": "2026-10-13T20:52:02.982718Z",
+            "environment": {
+              "os": "Linux 6.17.0-1022-azure",
+              "cpu": "AMD EPYC 7763 64-Core Processor",
+              "runner": "github-hosted:GitHub Actions 1000000009",
+              "jmhVersion": "1.37",
+              "javaVersion": "21.0.12.1",
+              "architecture": "x86_64"
+            },
+            "environmentSha256": "00bb7c6bbcb938e22c5807062e9da16c6a74804a84c470488ac38b007c6ee78e",
+            "status": "COMPLETE",
+            "dataOrigin": "REAL",
+            "provenance": "GITHUB_METADATA",
+            "artifactId": "1a065ece-6955-430a-a228-6b2a872f1b37",
+            "artifactIdentifier": "github-38466146476-1-baseline",
+            "artifactSha256": "4b274a81eef800e6b5dbeee7a1bb725069eb4fcaea7b8cca605b39a1a2ed9dfd",
+            "importedAt": "2026-10-13T20:56:23.100176Z"
+          },
+          "parameters": {
+            "events": "10000"
+          },
+          "configuration": {
+            "jvmArgs": [
+              "-Xms256m",
+              "-Xmx256m",
+              "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+            ],
+            "forkCount": 3,
+            "warmupTimeMs": 1000,
+            "warmupIterations": 3,
+            "measurementTimeMs": 1000,
+            "measurementIterations": 5
+          },
+          "configurationSha256": "6c6372f61a2c60e9f2687d0eb74936a0a2550775d03c7b65de400cfe7cbd7d53",
+          "forks": 3,
+          "sampleCount": 15,
+          "mean": 0.9397740924736517
+        },
+        {
+          "run": {
+            "id": "a9e21fc7-0ed8-4bf6-879d-8cb42753cf83",
+            "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+            "pullRequestId": "02d0afdb-375e-4d70-ad5d-7a78e5a497a7",
+            "workflowRunId": 38449649490,
+            "runAttempt": 1,
+            "githubUrl": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38449649490",
+            "commitSha": "41e3ff909bdb246c563fbe4e1bfc13565778e864",
+            "baselineSha": "e6435b3967c06f9dd7d25f8e8f8c857d2ad28d25",
+            "candidateSha": "41e3ff909bdb246c563fbe4e1bfc13565778e864",
+            "branch": "demo/aggregate-on-read",
+            "measuredAt": "2026-10-13T18:48:31.311833Z",
+            "environment": {
+              "os": "Linux 6.17.0-1022-azure",
+              "cpu": "AMD EPYC 7763 64-Core Processor",
+              "runner": "github-hosted:GitHub Actions 1000000006",
+              "jmhVersion": "1.37",
+              "javaVersion": "21.0.12.1",
+              "architecture": "x86_64"
+            },
+            "environmentSha256": "d387ccb6998f77921060c6ea8d8fe8f20b6586ae2fc5b3972599773c5e2ad636",
+            "status": "COMPLETE",
+            "dataOrigin": "REAL",
+            "provenance": "GITHUB_METADATA",
+            "artifactId": "8530315f-01ce-43d0-a345-fd7911af2048",
+            "artifactIdentifier": "github-38449649490-1-candidate",
+            "artifactSha256": "c4842e2000c381462677a5c066324dcb977b57f5e7fe0d63fdc43db384b508a9",
+            "importedAt": "2026-10-13T19:19:00.275008Z"
+          },
+          "parameters": {
+            "events": "10000"
+          },
+          "configuration": {
+            "jvmArgs": [
+              "-Xms256m",
+              "-Xmx256m",
+              "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+            ],
+            "forkCount": 3,
+            "warmupTimeMs": 1000,
+            "warmupIterations": 3,
+            "measurementTimeMs": 1000,
+            "measurementIterations": 5
+          },
+          "configurationSha256": "6c6372f61a2c60e9f2687d0eb74936a0a2550775d03c7b65de400cfe7cbd7d53",
+          "forks": 3,
+          "sampleCount": 15,
+          "mean": 103925.53039362592
+        },
+        {
+          "run": {
+            "id": "586f7460-19ab-4f32-aaf9-e37f4a7d83ff",
+            "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+            "pullRequestId": "02d0afdb-375e-4d70-ad5d-7a78e5a497a7",
+            "workflowRunId": 38449649490,
+            "runAttempt": 1,
+            "githubUrl": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38449649490",
+            "commitSha": "e6435b3967c06f9dd7d25f8e8f8c857d2ad28d25",
+            "baselineSha": "e6435b3967c06f9dd7d25f8e8f8c857d2ad28d25",
+            "candidateSha": "41e3ff909bdb246c563fbe4e1bfc13565778e864",
+            "branch": "main",
+            "measuredAt": "2026-10-13T18:48:14.312511Z",
+            "environment": {
+              "os": "Linux 6.17.0-1022-azure",
+              "cpu": "AMD EPYC 7763 64-Core Processor",
+              "runner": "github-hosted:GitHub Actions 1000000006",
+              "jmhVersion": "1.37",
+              "javaVersion": "21.0.12.1",
+              "architecture": "x86_64"
+            },
+            "environmentSha256": "d387ccb6998f77921060c6ea8d8fe8f20b6586ae2fc5b3972599773c5e2ad636",
+            "status": "COMPLETE",
+            "dataOrigin": "REAL",
+            "provenance": "GITHUB_METADATA",
+            "artifactId": "e33eeb45-08b4-4679-b1dd-11f170c0dc1a",
+            "artifactIdentifier": "github-38449649490-1-baseline",
+            "artifactSha256": "8f698e69171af2ba50a409db7136ad3f6b85bd25cbcd2388da20c0a36adbf4a9",
+            "importedAt": "2026-10-13T19:19:00.275008Z"
+          },
+          "parameters": {
+            "events": "10000"
+          },
+          "configuration": {
+            "jvmArgs": [
+              "-Xms256m",
+              "-Xmx256m",
+              "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+            ],
+            "forkCount": 3,
+            "warmupTimeMs": 1000,
+            "warmupIterations": 3,
+            "measurementTimeMs": 1000,
+            "measurementIterations": 5
+          },
+          "configurationSha256": "6c6372f61a2c60e9f2687d0eb74936a0a2550775d03c7b65de400cfe7cbd7d53",
+          "forks": 3,
+          "sampleCount": 15,
+          "mean": 0.9344645103212658
+        }
+      ],
+      "page": 0,
+      "size": 20,
+      "totalElements": 4
+    },
+    {
+      "items": [
+        {
+          "run": {
+            "id": "3e101242-fafd-4561-9ef7-f87a860722a5",
+            "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+            "pullRequestId": "02d0afdb-375e-4d70-ad5d-7a78e5a497a7",
+            "workflowRunId": 38466146476,
+            "runAttempt": 1,
+            "githubUrl": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38466146476",
+            "commitSha": "1bab51dcbfc203d1d8ffc2a41f144c9fa738ba8f",
+            "baselineSha": "55a1c4030211cff11169f26cf75e0771e58efaf1",
+            "candidateSha": "1bab51dcbfc203d1d8ffc2a41f144c9fa738ba8f",
+            "branch": "demo/aggregate-on-read",
+            "measuredAt": "2026-10-13T20:52:20.288811Z",
+            "environment": {
+              "os": "Linux 6.17.0-1022-azure",
+              "cpu": "AMD EPYC 7763 64-Core Processor",
+              "runner": "github-hosted:GitHub Actions 1000000009",
+              "jmhVersion": "1.37",
+              "javaVersion": "21.0.12.1",
+              "architecture": "x86_64"
+            },
+            "environmentSha256": "00bb7c6bbcb938e22c5807062e9da16c6a74804a84c470488ac38b007c6ee78e",
+            "status": "COMPLETE",
+            "dataOrigin": "REAL",
+            "provenance": "GITHUB_METADATA",
+            "artifactId": "ef5de3ad-edd2-456f-883f-27ae51ea02a8",
+            "artifactIdentifier": "github-38466146476-1-candidate",
+            "artifactSha256": "6de96539af7acda526959606d82d7cc08f67204106d1530e0c5b507f73a14036",
+            "importedAt": "2026-10-13T20:56:23.100176Z"
+          },
+          "parameters": {
+            "events": "10000"
+          },
+          "configuration": {
+            "jvmArgs": [
+              "-Xms256m",
+              "-Xmx256m",
+              "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+            ],
+            "forkCount": 3,
+            "warmupTimeMs": 1000,
+            "warmupIterations": 3,
+            "measurementTimeMs": 1000,
+            "measurementIterations": 5
+          },
+          "configurationSha256": "b79902decbe514bdb3cae5fe0b76bed6a32e9d8c712f3c939990ae97a238a93b",
+          "forks": 3,
+          "sampleCount": 15,
+          "mean": 36233.550805820996
+        },
+        {
+          "run": {
+            "id": "ead1061c-d479-45a8-ab04-487f95bfc317",
+            "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+            "pullRequestId": "02d0afdb-375e-4d70-ad5d-7a78e5a497a7",
+            "workflowRunId": 38466146476,
+            "runAttempt": 1,
+            "githubUrl": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38466146476",
+            "commitSha": "55a1c4030211cff11169f26cf75e0771e58efaf1",
+            "baselineSha": "55a1c4030211cff11169f26cf75e0771e58efaf1",
+            "candidateSha": "1bab51dcbfc203d1d8ffc2a41f144c9fa738ba8f",
+            "branch": "main",
+            "measuredAt": "2026-10-13T20:52:02.982718Z",
+            "environment": {
+              "os": "Linux 6.17.0-1022-azure",
+              "cpu": "AMD EPYC 7763 64-Core Processor",
+              "runner": "github-hosted:GitHub Actions 1000000009",
+              "jmhVersion": "1.37",
+              "javaVersion": "21.0.12.1",
+              "architecture": "x86_64"
+            },
+            "environmentSha256": "00bb7c6bbcb938e22c5807062e9da16c6a74804a84c470488ac38b007c6ee78e",
+            "status": "COMPLETE",
+            "dataOrigin": "REAL",
+            "provenance": "GITHUB_METADATA",
+            "artifactId": "1a065ece-6955-430a-a228-6b2a872f1b37",
+            "artifactIdentifier": "github-38466146476-1-baseline",
+            "artifactSha256": "4b274a81eef800e6b5dbeee7a1bb725069eb4fcaea7b8cca605b39a1a2ed9dfd",
+            "importedAt": "2026-10-13T20:56:23.100176Z"
+          },
+          "parameters": {
+            "events": "10000"
+          },
+          "configuration": {
+            "jvmArgs": [
+              "-Xms256m",
+              "-Xmx256m",
+              "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+            ],
+            "forkCount": 3,
+            "warmupTimeMs": 1000,
+            "warmupIterations": 3,
+            "measurementTimeMs": 1000,
+            "measurementIterations": 5
+          },
+          "configurationSha256": "b79902decbe514bdb3cae5fe0b76bed6a32e9d8c712f3c939990ae97a238a93b",
+          "forks": 3,
+          "sampleCount": 15,
+          "mean": 3.5591114681601748
+        },
+        {
+          "run": {
+            "id": "a9e21fc7-0ed8-4bf6-879d-8cb42753cf83",
+            "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+            "pullRequestId": "02d0afdb-375e-4d70-ad5d-7a78e5a497a7",
+            "workflowRunId": 38449649490,
+            "runAttempt": 1,
+            "githubUrl": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38449649490",
+            "commitSha": "41e3ff909bdb246c563fbe4e1bfc13565778e864",
+            "baselineSha": "e6435b3967c06f9dd7d25f8e8f8c857d2ad28d25",
+            "candidateSha": "41e3ff909bdb246c563fbe4e1bfc13565778e864",
+            "branch": "demo/aggregate-on-read",
+            "measuredAt": "2026-10-13T18:48:31.311833Z",
+            "environment": {
+              "os": "Linux 6.17.0-1022-azure",
+              "cpu": "AMD EPYC 7763 64-Core Processor",
+              "runner": "github-hosted:GitHub Actions 1000000006",
+              "jmhVersion": "1.37",
+              "javaVersion": "21.0.12.1",
+              "architecture": "x86_64"
+            },
+            "environmentSha256": "d387ccb6998f77921060c6ea8d8fe8f20b6586ae2fc5b3972599773c5e2ad636",
+            "status": "COMPLETE",
+            "dataOrigin": "REAL",
+            "provenance": "GITHUB_METADATA",
+            "artifactId": "8530315f-01ce-43d0-a345-fd7911af2048",
+            "artifactIdentifier": "github-38449649490-1-candidate",
+            "artifactSha256": "c4842e2000c381462677a5c066324dcb977b57f5e7fe0d63fdc43db384b508a9",
+            "importedAt": "2026-10-13T19:19:00.275008Z"
+          },
+          "parameters": {
+            "events": "10000"
+          },
+          "configuration": {
+            "jvmArgs": [
+              "-Xms256m",
+              "-Xmx256m",
+              "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+            ],
+            "forkCount": 3,
+            "warmupTimeMs": 1000,
+            "warmupIterations": 3,
+            "measurementTimeMs": 1000,
+            "measurementIterations": 5
+          },
+          "configurationSha256": "b79902decbe514bdb3cae5fe0b76bed6a32e9d8c712f3c939990ae97a238a93b",
+          "forks": 3,
+          "sampleCount": 15,
+          "mean": 36949.92671985723
+        },
+        {
+          "run": {
+            "id": "586f7460-19ab-4f32-aaf9-e37f4a7d83ff",
+            "repositoryId": "19af7456-7466-490d-8802-45c45fde6cbc",
+            "pullRequestId": "02d0afdb-375e-4d70-ad5d-7a78e5a497a7",
+            "workflowRunId": 38449649490,
+            "runAttempt": 1,
+            "githubUrl": "https://github.com/300-iq/regresslab-java-demo/actions/runs/38449649490",
+            "commitSha": "e6435b3967c06f9dd7d25f8e8f8c857d2ad28d25",
+            "baselineSha": "e6435b3967c06f9dd7d25f8e8f8c857d2ad28d25",
+            "candidateSha": "41e3ff909bdb246c563fbe4e1bfc13565778e864",
+            "branch": "main",
+            "measuredAt": "2026-10-13T18:48:14.312511Z",
+            "environment": {
+              "os": "Linux 6.17.0-1022-azure",
+              "cpu": "AMD EPYC 7763 64-Core Processor",
+              "runner": "github-hosted:GitHub Actions 1000000006",
+              "jmhVersion": "1.37",
+              "javaVersion": "21.0.12.1",
+              "architecture": "x86_64"
+            },
+            "environmentSha256": "d387ccb6998f77921060c6ea8d8fe8f20b6586ae2fc5b3972599773c5e2ad636",
+            "status": "COMPLETE",
+            "dataOrigin": "REAL",
+            "provenance": "GITHUB_METADATA",
+            "artifactId": "e33eeb45-08b4-4679-b1dd-11f170c0dc1a",
+            "artifactIdentifier": "github-38449649490-1-baseline",
+            "artifactSha256": "8f698e69171af2ba50a409db7136ad3f6b85bd25cbcd2388da20c0a36adbf4a9",
+            "importedAt": "2026-10-13T19:19:00.275008Z"
+          },
+          "parameters": {
+            "events": "10000"
+          },
+          "configuration": {
+            "jvmArgs": [
+              "-Xms256m",
+              "-Xmx256m",
+              "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+            ],
+            "forkCount": 3,
+            "warmupTimeMs": 1000,
+            "warmupIterations": 3,
+            "measurementTimeMs": 1000,
+            "measurementIterations": 5
+          },
+          "configurationSha256": "b79902decbe514bdb3cae5fe0b76bed6a32e9d8c712f3c939990ae97a238a93b",
+          "forks": 3,
+          "sampleCount": 15,
+          "mean": 3.5609865991820175
+        }
+      ],
+      "page": 0,
+      "size": 20,
+      "totalElements": 4
+    }
+  ],
+  "runSamples": [
+    {
+      "runId": "3e101242-fafd-4561-9ef7-f87a860722a5",
+      "benchmarkCaseId": "dc83aee3-b567-4ebc-bbb0-aed44377e2b1",
+      "unit": "ns/op",
+      "dataOrigin": "REAL",
+      "samples": {
+        "items": [
+          {
+            "forkIndex": 0,
+            "iterationIndex": 0,
+            "value": 106601.33955025046
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 1,
+            "value": 105990.48606548691
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 2,
+            "value": 106210.41924179676
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 3,
+            "value": 108463.65582303188
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 4,
+            "value": 112111.97097063439
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 0,
+            "value": 97917.22848751835
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 1,
+            "value": 97864.64257145644
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 2,
+            "value": 101133.06713852377
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 3,
+            "value": 99110.19629409433
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 4,
+            "value": 101012.91184489548
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 0,
+            "value": 108106.19142270714
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 1,
+            "value": 107284.49576407507
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 2,
+            "value": 107300.92748337267
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 3,
+            "value": 107685.49881567614
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 4,
+            "value": 107874.11151855048
+          }
+        ],
+        "page": 0,
+        "size": 100,
+        "totalElements": 15
+      }
+    },
+    {
+      "runId": "3e101242-fafd-4561-9ef7-f87a860722a5",
+      "benchmarkCaseId": "deeda7b9-51aa-49dd-a283-5a37236eb062",
+      "unit": "ns/op",
+      "dataOrigin": "REAL",
+      "samples": {
+        "items": [
+          {
+            "forkIndex": 0,
+            "iterationIndex": 0,
+            "value": 36941.82238227147
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 1,
+            "value": 36784.934130194924
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 2,
+            "value": 36819.286718692485
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 3,
+            "value": 36730.72226506555
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 4,
+            "value": 36791.284668579414
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 0,
+            "value": 34940.34745851529
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 1,
+            "value": 34943.89941655312
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 2,
+            "value": 34859.92454605653
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 3,
+            "value": 35010.57891973256
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 4,
+            "value": 35874.206535385056
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 0,
+            "value": 36677.97072831184
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 1,
+            "value": 36781.70885889751
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 2,
+            "value": 36753.07089155389
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 3,
+            "value": 36793.07195409064
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 4,
+            "value": 36800.43261341477
+          }
+        ],
+        "page": 0,
+        "size": 100,
+        "totalElements": 15
+      }
+    },
+    {
+      "runId": "ead1061c-d479-45a8-ab04-487f95bfc317",
+      "benchmarkCaseId": "dc83aee3-b567-4ebc-bbb0-aed44377e2b1",
+      "unit": "ns/op",
+      "dataOrigin": "REAL",
+      "samples": {
+        "items": [
+          {
+            "forkIndex": 0,
+            "iterationIndex": 0,
+            "value": 0.9422264661620045
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 1,
+            "value": 0.9350944746949454
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 2,
+            "value": 0.9654004674340965
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 3,
+            "value": 0.9464837583916447
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 4,
+            "value": 0.9453002895710482
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 0,
+            "value": 0.9408415293673615
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 1,
+            "value": 0.9612949587648164
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 2,
+            "value": 0.9441663175723158
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 3,
+            "value": 0.9580000333207662
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 4,
+            "value": 0.9391453273977974
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 0,
+            "value": 0.9188808862274287
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 1,
+            "value": 0.9306413131842262
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 2,
+            "value": 0.9198468015812952
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 3,
+            "value": 0.929628842040653
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 4,
+            "value": 0.9196599213943769
+          }
+        ],
+        "page": 0,
+        "size": 100,
+        "totalElements": 15
+      }
+    },
+    {
+      "runId": "ead1061c-d479-45a8-ab04-487f95bfc317",
+      "benchmarkCaseId": "deeda7b9-51aa-49dd-a283-5a37236eb062",
+      "unit": "ns/op",
+      "dataOrigin": "REAL",
+      "samples": {
+        "items": [
+          {
+            "forkIndex": 0,
+            "iterationIndex": 0,
+            "value": 3.5246658846904686
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 1,
+            "value": 3.5291900284554396
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 2,
+            "value": 3.582426571378459
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 3,
+            "value": 3.527673503755106
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 4,
+            "value": 3.5517463723869387
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 0,
+            "value": 3.503743027690427
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 1,
+            "value": 3.515267610477492
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 2,
+            "value": 3.5569174460636352
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 3,
+            "value": 3.600217667297156
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 4,
+            "value": 3.6577810437475367
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 0,
+            "value": 3.5026977165906716
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 1,
+            "value": 3.538056704789404
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 2,
+            "value": 3.700431654811469
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 3,
+            "value": 3.5727269751406316
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 4,
+            "value": 3.5231298151277866
+          }
+        ],
+        "page": 0,
+        "size": 100,
+        "totalElements": 15
+      }
+    },
+    {
+      "runId": "a9e21fc7-0ed8-4bf6-879d-8cb42753cf83",
+      "benchmarkCaseId": "dc83aee3-b567-4ebc-bbb0-aed44377e2b1",
+      "unit": "ns/op",
+      "dataOrigin": "REAL",
+      "samples": {
+        "items": [
+          {
+            "forkIndex": 0,
+            "iterationIndex": 0,
+            "value": 104127.83262204642
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 1,
+            "value": 104133.24164497657
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 2,
+            "value": 104377.57090681414
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 3,
+            "value": 106082.6809841977
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 4,
+            "value": 107559.6142595978
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 0,
+            "value": 97971.1575080811
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 1,
+            "value": 97776.01896383187
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 2,
+            "value": 98107.75762628739
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 3,
+            "value": 98714.50227003553
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 4,
+            "value": 98983.58901533895
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 0,
+            "value": 107496.38645889307
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 1,
+            "value": 109378.63061782395
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 2,
+            "value": 107388.5779471763
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 3,
+            "value": 108999.47515257193
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 4,
+            "value": 107785.91992671625
+          }
+        ],
+        "page": 0,
+        "size": 100,
+        "totalElements": 15
+      }
+    },
+    {
+      "runId": "a9e21fc7-0ed8-4bf6-879d-8cb42753cf83",
+      "benchmarkCaseId": "deeda7b9-51aa-49dd-a283-5a37236eb062",
+      "unit": "ns/op",
+      "dataOrigin": "REAL",
+      "samples": {
+        "items": [
+          {
+            "forkIndex": 0,
+            "iterationIndex": 0,
+            "value": 36843.630272221606
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 1,
+            "value": 37174.56756857206
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 2,
+            "value": 37154.02644677216
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 3,
+            "value": 36858.56629569575
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 4,
+            "value": 36775.1491286124
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 0,
+            "value": 36714.72773658322
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 1,
+            "value": 37112.75701627554
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 2,
+            "value": 36789.328858319845
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 3,
+            "value": 36727.489607814336
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 4,
+            "value": 36768.5644070289
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 0,
+            "value": 36720.69678840154
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 1,
+            "value": 36911.25575730735
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 2,
+            "value": 37332.37871832195
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 3,
+            "value": 37661.229205106
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 4,
+            "value": 36704.53299082569
+          }
+        ],
+        "page": 0,
+        "size": 100,
+        "totalElements": 15
+      }
+    },
+    {
+      "runId": "586f7460-19ab-4f32-aaf9-e37f4a7d83ff",
+      "benchmarkCaseId": "dc83aee3-b567-4ebc-bbb0-aed44377e2b1",
+      "unit": "ns/op",
+      "dataOrigin": "REAL",
+      "samples": {
+        "items": [
+          {
+            "forkIndex": 0,
+            "iterationIndex": 0,
+            "value": 0.947445763474776
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 1,
+            "value": 0.9623524748262595
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 2,
+            "value": 0.9537233066219504
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 3,
+            "value": 0.9579903449711709
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 4,
+            "value": 0.9415099741456295
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 0,
+            "value": 0.9239524847428412
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 1,
+            "value": 0.9350764803704238
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 2,
+            "value": 0.9180657040254055
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 3,
+            "value": 0.9254008119807713
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 4,
+            "value": 0.919194251867019
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 0,
+            "value": 0.9230858131780822
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 1,
+            "value": 0.9282894435181537
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 2,
+            "value": 0.9245860012999951
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 3,
+            "value": 0.9305870694785794
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 4,
+            "value": 0.9257077303179277
+          }
+        ],
+        "page": 0,
+        "size": 100,
+        "totalElements": 15
+      }
+    },
+    {
+      "runId": "586f7460-19ab-4f32-aaf9-e37f4a7d83ff",
+      "benchmarkCaseId": "deeda7b9-51aa-49dd-a283-5a37236eb062",
+      "unit": "ns/op",
+      "dataOrigin": "REAL",
+      "samples": {
+        "items": [
+          {
+            "forkIndex": 0,
+            "iterationIndex": 0,
+            "value": 3.527828583008911
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 1,
+            "value": 3.5797840224234365
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 2,
+            "value": 3.5692174922453073
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 3,
+            "value": 3.5212021114244996
+          },
+          {
+            "forkIndex": 0,
+            "iterationIndex": 4,
+            "value": 3.5787764636067796
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 0,
+            "value": 3.5026079525232263
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 1,
+            "value": 3.60053944275416
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 2,
+            "value": 3.5060158154451653
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 3,
+            "value": 3.5371870167312887
+          },
+          {
+            "forkIndex": 1,
+            "iterationIndex": 4,
+            "value": 3.535233264448756
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 0,
+            "value": 3.583926317754485
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 1,
+            "value": 3.5996765897466583
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 2,
+            "value": 3.499695922778819
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 3,
+            "value": 3.6019319517700885
+          },
+          {
+            "forkIndex": 2,
+            "iterationIndex": 4,
+            "value": 3.671176041068683
+          }
+        ],
+        "page": 0,
+        "size": 100,
+        "totalElements": 15
+      }
+    }
+  ]
+}

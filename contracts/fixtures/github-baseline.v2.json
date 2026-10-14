@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 2,
+  "artifactId": "github-38449649490-1-baseline",
+  "dataOrigin": "REAL",
+  "repository": {
+    "githubId": 1417739588,
+    "owner": "300-iq",
+    "name": "regresslab-java-demo"
+  },
+  "pullRequest": {
+    "number": 1,
+    "title": "Demonstrate aggregate-on-read event queries",
+    "state": "OPEN",
+    "baselineSha": "e6435b3967c06f9dd7d25f8e8f8c857d2ad28d25",
+    "candidateSha": "41e3ff909bdb246c563fbe4e1bfc13565778e864"
+  },
+  "run": {
+    "workflowRunId": 38449649490,
+    "runAttempt": 1,
+    "commitSha": "e6435b3967c06f9dd7d25f8e8f8c857d2ad28d25",
+    "branch": "main",
+    "measuredAt": "2026-10-13T18:48:14.312511Z",
+    "status": "COMPLETE",
+    "environment": {
+      "runner": "github-hosted:GitHub Actions 1000000006",
+      "os": "Linux 6.17.0-1022-azure",
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7763 64-Core Processor",
+      "javaVersion": "21.0.12.1",
+      "jmhVersion": "1.37"
+    }
+  },
+  "benchmarks": [
+    {
+      "identifier": "dev.regresslab.demo.EventBenchmarks.countByCategory",
+      "metricName": "average_time",
+      "unit": "ns/op",
+      "direction": "LOWER",
+      "parameters": {
+        "events": "10000"
+      },
+      "configuration": {
+        "forkCount": 3,
+        "warmupIterations": 3,
+        "measurementIterations": 5,
+        "warmupTimeMs": 1000,
+        "measurementTimeMs": 1000,
+        "jvmArgs": [
+          "-Xms256m",
+          "-Xmx256m",
+          "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+        ]
+      },
+      "samples": [
+        {
+          "forkIndex": 0,
+          "iterationIndex": 0,
+          "value": 3.527828583008911
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 1,
+          "value": 3.5797840224234365
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 2,
+          "value": 3.5692174922453073
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 3,
+          "value": 3.5212021114244996
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 4,
+          "value": 3.5787764636067796
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 0,
+          "value": 3.5026079525232263
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 1,
+          "value": 3.60053944275416
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 2,
+          "value": 3.5060158154451653
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 3,
+          "value": 3.5371870167312887
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 4,
+          "value": 3.535233264448756
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 0,
+          "value": 3.583926317754485
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 1,
+          "value": 3.5996765897466583
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 2,
+          "value": 3.499695922778819
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 3,
+          "value": 3.6019319517700885
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 4,
+          "value": 3.671176041068683
+        }
+      ]
+    },
+    {
+      "identifier": "dev.regresslab.demo.EventBenchmarks.distinctCategories",
+      "metricName": "average_time",
+      "unit": "ns/op",
+      "direction": "LOWER",
+      "parameters": {
+        "events": "10000"
+      },
+      "configuration": {
+        "forkCount": 3,
+        "warmupIterations": 3,
+        "measurementIterations": 5,
+        "warmupTimeMs": 1000,
+        "measurementTimeMs": 1000,
+        "jvmArgs": [
+          "-Xms256m",
+          "-Xmx256m",
+          "-Dregresslab.harness=1e8c48434de66880b2bd0886cbb2f86535f20ce54efc51ddc3662ef8c7f53bf9"
+        ]
+      },
+      "samples": [
+        {
+          "forkIndex": 0,
+          "iterationIndex": 0,
+          "value": 0.947445763474776
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 1,
+          "value": 0.9623524748262595
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 2,
+          "value": 0.9537233066219504
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 3,
+          "value": 0.9579903449711709
+        },
+        {
+          "forkIndex": 0,
+          "iterationIndex": 4,
+          "value": 0.9415099741456295
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 0,
+          "value": 0.9239524847428412
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 1,
+          "value": 0.9350764803704238
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 2,
+          "value": 0.9180657040254055
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 3,
+          "value": 0.9254008119807713
+        },
+        {
+          "forkIndex": 1,
+          "iterationIndex": 4,
+          "value": 0.919194251867019
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 0,
+          "value": 0.9230858131780822
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 1,
+          "value": 0.9282894435181537
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 2,
+          "value": 0.9245860012999951
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 3,
+          "value": 0.9305870694785794
+        },
+        {
+          "forkIndex": 2,
+          "iterationIndex": 4,
+          "value": 0.9257077303179277
+        }
+      ]
+    }
+  ]
+}
