@@ -54,6 +54,8 @@ recordings/
 *.mov
 *.bundle
 *.zip
+!backend/src/test/resources/github/baseline.zip
+!backend/src/test/resources/github/candidate.zip
 *.tar
 *.tar.gz
 *.tgz
