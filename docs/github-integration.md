@@ -28,10 +28,11 @@ matching hashes do not establish independent/honest measurements or remove noise
 ## Obtain original archives
 
 Use trusted local GitHub administration, not untrusted PR code. The importer checks
-current run/PR/artifact metadata and original ZIP digests. Original archives/results
-are not bundled in this source repository. Download them locally; do not extract
-and re-zip before import. `gh run download` extracts content and cannot reproduce
-the original ZIP digest.
+current run/PR/artifact metadata and original ZIP digests. Download import archives
+locally; do not extract and re-zip before import. The two small archives under
+backend/src/test/resources/github are historical test fixtures, not substitutes
+for current GitHub verification. `gh run download` extracts content and cannot
+reproduce the original ZIP digest.
 
 For the existing workflow, while artifacts are available and current metadata still
 matches, an authenticated GitHub CLI can download the original archives:
