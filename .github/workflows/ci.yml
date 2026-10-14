@@ -44,6 +44,7 @@ jobs:
           set -a
           source .env
           set +a
+          printf '::add-mask::%s\n' "$POSTGRES_PASSWORD"
           printf 'DATABASE_PASSWORD=%s\n' "$POSTGRES_PASSWORD" >> "$GITHUB_ENV"
           docker compose --env-file .env -f infra/compose.yaml config --quiet
           docker compose --env-file .env -f infra/compose.yaml up -d --wait
